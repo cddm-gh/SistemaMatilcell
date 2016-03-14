@@ -40,6 +40,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	}
 }
 
-require 'views/login.view.php';
-
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login del Sistema</title>
+</head>
+<body>
+	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" name="login">
+		<input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario"><br>
+		<input type="password" name="password" id="password" placeholder="Password"><br>
+		<input type="submit" value="Entrar">
+	</form>	
+</body>
+</html>
