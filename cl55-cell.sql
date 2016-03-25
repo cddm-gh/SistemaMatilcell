@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 25, 2016 at 04:43 PM
+-- Generation Time: Mar 25, 2016 at 07:55 PM
 -- Server version: 5.5.47
 -- PHP Version: 5.3.28
 
@@ -30,9 +30,7 @@ CREATE TABLE IF NOT EXISTS `Clientes` (
   `cedula` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
   `nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `telefono` varchar(12) COLLATE utf8_spanish_ci NOT NULL,
-  `serial` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`cedula`),
-  KEY `serial` (`serial`)
+  PRIMARY KEY (`cedula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -61,8 +59,7 @@ CREATE TABLE IF NOT EXISTS `Equipos` (
   `serial` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `marca` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `modelo` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`serial`),
-  KEY `serial` (`serial`)
+  PRIMARY KEY (`serial`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -76,9 +73,9 @@ CREATE TABLE IF NOT EXISTS `Ordenes` (
   `cedula_cli` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
   `serial_eq` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `id_tec` int(11) NOT NULL,
-  `memoria` tinyint(1) NOT NULL,
-  `chip` tinyint(1) NOT NULL,
-  `tapa` tinyint(1) NOT NULL,
+  `memoria` smallint(6) NOT NULL,
+  `chip` smallint(6) NOT NULL,
+  `tapa` smallint(6) NOT NULL,
   `falla` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `observaciones` varchar(80) COLLATE utf8_spanish_ci NOT NULL,
   `status` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
@@ -91,6 +88,32 @@ CREATE TABLE IF NOT EXISTS `Ordenes` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Recibidos`
+--
+
+CREATE TABLE IF NOT EXISTS `Recibidos` (
+  `cedula_cli` varchar(9) COLLATE utf8_spanish_ci NOT NULL,
+  `serial_eq` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  KEY `cedula_cli` (`cedula_cli`),
+  KEY `serial_eq` (`serial_eq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Reparo`
+--
+
+CREATE TABLE IF NOT EXISTS `Reparo` (
+  `id_tec` int(11) NOT NULL,
+  `serial_eq` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  KEY `id_tec` (`id_tec`),
+  KEY `serial_eq` (`serial_eq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Tecnicos`
 --
 
@@ -98,20 +121,12 @@ CREATE TABLE IF NOT EXISTS `Tecnicos` (
   `id_tec` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `rol` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
-  `serial` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`id_tec`),
-  KEY `serial` (`serial`)
+  PRIMARY KEY (`id_tec`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `Clientes`
---
-ALTER TABLE `Clientes`
-  ADD CONSTRAINT `Clientes_ibfk_1` FOREIGN KEY (`serial`) REFERENCES `Equipos` (`serial`);
 
 --
 -- Constraints for table `Ordenes`
@@ -122,10 +137,18 @@ ALTER TABLE `Ordenes`
   ADD CONSTRAINT `Ordenes_ibfk_2` FOREIGN KEY (`serial_eq`) REFERENCES `Equipos` (`serial`);
 
 --
--- Constraints for table `Tecnicos`
+-- Constraints for table `Recibidos`
 --
-ALTER TABLE `Tecnicos`
-  ADD CONSTRAINT `Tecnicos_ibfk_1` FOREIGN KEY (`serial`) REFERENCES `Equipos` (`serial`);
+ALTER TABLE `Recibidos`
+  ADD CONSTRAINT `Recibidos_ibfk_2` FOREIGN KEY (`serial_eq`) REFERENCES `Equipos` (`serial`),
+  ADD CONSTRAINT `Recibidos_ibfk_1` FOREIGN KEY (`cedula_cli`) REFERENCES `Clientes` (`cedula`);
+
+--
+-- Constraints for table `Reparo`
+--
+ALTER TABLE `Reparo`
+  ADD CONSTRAINT `Reparo_ibfk_2` FOREIGN KEY (`serial_eq`) REFERENCES `Equipos` (`serial`),
+  ADD CONSTRAINT `Reparo_ibfk_1` FOREIGN KEY (`id_tec`) REFERENCES `Tecnicos` (`id_tec`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
