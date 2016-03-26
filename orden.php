@@ -63,15 +63,15 @@ if(!isset($_SESSION['usuario'])){
 		<textarea name="observacion" class="textoMayuscula" id="observacion" name="observacion" rows="5" cols="25" wrap="soft" maxlength="80"
 			maxlength="80"></textarea>
 
-		<br> Status: <br>
-		<input type="radio" id="srecibido" name="status" value="recibido" checked="true">RECIBIDO <br>
-		<input type="radio" id="sreparado" name="status" value="reparado">REPARADO <br>
-		<input type="radio" id="sentregado" name="status" value="entregado">ENTREGADO <br>
 		<hr>
 		<input type="submit" name="crear" value="Crear Orden">
 		<input type="reset" value="Limpiar Formulario"><br>
 
 		<div id="escondido" >
+			<br> Status: <br>
+			<input type="radio" id="srecibido" name="status" value="recibido" checked="true">RECIBIDO <br>
+			<input type="radio" id="sreparado" name="status" value="reparado">REPARADO <br>
+			<input type="radio" id="sentregado" name="status" value="entregado">ENTREGADO <br>
 			<input type="radio" id="cliente_enc" name="cliente_enc" value="encontrado">Cliente encontrado <br>
 			<input type="radio" id="cliente_enc" name="cliente_enc" value="nencontrado" checked="true">Cliente NO encontrado <br>
 			<input type="radio" id="equipo_enc" name="equipo_enc" value="encontrado">Equipo encontrado <br>
@@ -81,6 +81,7 @@ if(!isset($_SESSION['usuario'])){
 
 	<!-- Para al salir del campo cedula buscar en la base de datos si ya tiene registrado el cliente -->
 		<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+		<script src="js/jquery.maskedinput.js"></script>
 		<script src="js/global.js"></script>
 </body>
 </html>

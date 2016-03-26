@@ -1,3 +1,10 @@
+//funcion para enmascarar los inputs
+$(document).ready(function($){
+	$('#cedula').mask("99999999");
+	$('#telefono').mask("9999-9999999");
+	$('#serial').mask("999999999999999");
+});
+
 //Funcion para al salir del input cedula busca en la BD por esa cedula
 //Si la encuentra regresa los datos de ese cliente y los agrega en los campos correspondientes
 $('input#cedula').focusout(function(){
