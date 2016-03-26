@@ -5,10 +5,14 @@ $('input#cedula').focusout(function(){
 	if($.trim(cedula) != ''){
 		$.post('ajax/buscar.php', {cedula: cedula}, function(data){
 			if(data !== ''){
+				//alert(data);
 				var mitad = data.split('/');
 				$('#nombre').val(mitad[0]);
 				$('#telefono').val(mitad[1]);	
 				$('#serial').focus();	
+				$('#cliente_enc').prop("checked", true);
+			}else{
+				$('#cliente_enc').prop("checked", false);
 			}
 		});
 	}
@@ -19,10 +23,14 @@ $('input#serial').focusout(function(){
 	if($.trim(serial) != ''){
 		$.post('ajax/buscar.php', {serial: serial}, function(data){
 			if(data !== ''){
+				//alert(data);
 				var mitad = data.split('/');
 				$('#marca').val(mitad[0]);
 				$('#modelo').val(mitad[1]);	
 				$('#modelo').focus();	
+				$('#equipo_enc').prop("checked", true);
+			}else{
+				$('#cliente_enc').prop("checked", false);
 			}
 		});
 	}

@@ -1,0 +1,7 @@
+#escondido{
+	display: none;
+	visibility: hidden;
+}
+.textoMayuscula{
+	text-transform: capitalize;
+}

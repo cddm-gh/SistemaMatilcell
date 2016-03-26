@@ -21,16 +21,39 @@ if(isset($_POST['crear'])){
 	$falla = trim($_POST['falla']);
 	$observacion = trim($_POST['observacion']);
 	$status = trim($_POST['status']);
+	$cliente_enc = $_POST['cliente_enc'];
+	$equipo_enc = $_POST['equipo_enc'];
 	//Validar que las variables no esten vacias
 	if(empty($cedula) or empty($nombre) or empty($telefono) or empty($serial) or empty($marca) or empty($modelo)
 		or empty($falla) or empty($memoria) or empty($tapa) or empty($chip)){
 		echo "<h1>Error no puede dejar campos vacios!</h1><br>";
-		echo '<a href="orden.php">Volver al formulario.';
+		header('Location: orden.php');
 	}else{
+		require '/db/connect.php';
+		//Se debe insertar primero el cliente y el equipo
+		//ya que en la tabla ordenes se usan llaves foraneas y de no ser asi no permitira insertar
+		if($cliente_enc == 'nencontrado'){
+			$statement = $conexion->prepare('INSERT INTO clientes VALUES (:cedula,:nombre,:telefono)');
+			$statement->execute(array(
+				':cedula' => $cedula,
+				':nombre' => $nombre,
+				':telefono' => $telefono
+			));
+		}
+
+		if($equipo_enc == 'nencontrado'){
+			$statement = $conexion->prepare('INSERT INTO equipos VALUES (:serial,:marca,:modelo)');
+			$statement->execute(array(
+				':serial' => $serial,
+				':marca' => $marca,
+				':modelo' => $modelo
+			));
+		}
+
 		try{
-			require '/db/connect.php';
-			$statement = $conexion->prepare('INSERT INTO ordenes VALUES(0,:cedula,:serial_eq,:id_tec,:memoria,:chip,:tapa,:falla,
-				:observaciones,:status)');
+
+			$statement = $conexion->prepare('INSERT INTO ordenes VALUES (0,:cedula,:serial_eq,:id_tec,:memoria,:chip,:tapa,:falla,
+				:observacion,:status)');
 			$statement->execute(array(
 				':cedula' => $cedula,
 				':serial_eq' => $serial,
@@ -38,13 +61,14 @@ if(isset($_POST['crear'])){
 				':memoria' => $memoria,
 				':chip' => $chip,
 				':tapa' => $tapa,
-				':fallass' => $falla,
-				':observaciones' => $observacion,
+				':falla' => $falla,
+				':observacion' => $observacion,
 				':status' => $status
 				)
 			);
 			echo "<h1>Orden creada!</h1><br>";
 			echo '<a href="orden.php">Volver al formulario.';
+
 		}catch(PDOException $e){
 			echo "<h2> No se pudo crear la orden " . $e->getMessage();
 		}

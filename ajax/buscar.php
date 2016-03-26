@@ -11,8 +11,8 @@
 
 		if($resultado != false){
 			echo $resultado[1]."/".$resultado[2];
-		}
-		$statement->close();
+		}else
+			echo "";
 	}
 
 	if(isset($_POST['serial']) === true && empty($_POST['serial']) === false){
@@ -27,7 +27,7 @@
 
 		if($resultado2 != false){
 			echo $resultado2[1]."/".$resultado2[2];
-		}
-		$statement->close();
+		}else
+			echo "";
 	}
 ?>
