@@ -4,6 +4,7 @@ session_start();
 if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,6 +14,7 @@ if(!isset($_SESSION['usuario'])){
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+	
 	<form action="validar_orden.php" method="POST" name="orden">
 		<label for="cedula">Cedula:</label>
 		<input type="text" id="cedula" name="cedula" placeholder="Numero De cedula" required="true" autofocus="true" maxlength="9"><br>

@@ -15,11 +15,14 @@ if(!isset($_SESSION['usuario'])){
 <head>
 	<meta charset="UTF-8">
 	<title>Consulta de Ordenes</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-	<table>
-		<tr>
+	<div class="container">
+		<br>
+		<table class="table table-bordered table-hover">
+		<tr class="success">
 			<th>N Orden</th>
 			<th>Cedula</th>
 			<th>Serial</th>
@@ -31,7 +34,7 @@ if(!isset($_SESSION['usuario'])){
 			<th>Observacion</th>
 			<th>Status</th>
 		</tr>
-		<?php while($row = $statement->fetch()):; ?>
+			<?php while($row = $statement->fetch()):; ?>
 			<tr>
 				<td><?php echo $row[0]; ?></td>
 				<td><?php echo $row[1]; ?></td>
@@ -44,7 +47,13 @@ if(!isset($_SESSION['usuario'])){
 				<td><?php echo $row[8]; ?></td>
 				<td><?php echo $row[9]; ?></td>
 			</tr>
-		<?php endwhile; ?>
-	</table>
+			<?php endwhile; ?>
+		</table>	
+	</div>
+	
+
+
+	<script src="js/jquery-1.12.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
