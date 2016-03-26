@@ -20,7 +20,7 @@ if(!isset($_SESSION['usuario'])){
 		<hr class="border">
 		<div class="contenido">
 			<a href="orden.php" target="blank">Crear Nueva Orden</a><br>
-			<a href="#">Consultar Ordenes</a><br>
+			<a href="consultar.php" target="blank">Consultar Ordenes</a><br>
 			<a href="#">Ver Clientes</a><br>
 		</div>
 	</div>
