@@ -10,12 +10,13 @@ $errores = '';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$usuario = filter_var(strtolower($_POST['usuario']), FILTER_SANITIZE_STRING);
 	$password = $_POST['password'];
-	$password = hash('sha512', $password);
+	$password = filter_var($password, FILTER_SANITIZE_STRING);
 
 	try {
-		$dbhost = '217.199.187.194';
-		$dbname = 'cl55-gory';
-		$dbuser = 'cl55-gory';
+		//Datos para realizar la conexion
+		$dbhost = 'localhost';
+		$dbname = 'cl55-cell';
+		$dbuser = 'gory';
 		$dbpass = 'Darkgo13';
 		
 		$conexion = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
@@ -24,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		echo "Error " . $e->getMessage();
 	}
 
-	$statement = $conexion->prepare('SELECT * FROM usuarios WHERE usuario = :usuario AND pass = :password');
+	$statement = $conexion->prepare('SELECT * FROM empleados WHERE usuario = :usuario AND password = :password');
 	$statement->execute(array(
 		':usuario' => $usuario,
 		':password' => $password

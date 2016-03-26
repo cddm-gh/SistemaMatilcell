@@ -19,12 +19,9 @@ if(!isset($_SESSION['usuario'])){
 		<a href="cerrar.php">Cerrar Sesion</a>
 		<hr class="border">
 		<div class="contenido">
-			<article>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dicta iste veritatis enim quisquam 
-				architecto natus excepturi reprehenderit placeat quas aperiam, doloribus, modi officia ex ducimus inventore quibusdam provident facere.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit molestias quaerat alias blanditiis 
-				consequuntur laboriosam, voluptatem numquam dignissimos minima perspiciatis! Obcaecati neque tenetur exercitationem asperiores quas architecto commodi quidem, nihil!</p>
-			</article>
+			<a href="orden.php" target="blank">Crear Nueva Orden</a><br>
+			<a href="#">Consultar Ordenes</a><br>
+			<a href="#">Ver Clientes</a><br>
 		</div>
 	</div>
 </body>
