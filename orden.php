@@ -80,7 +80,7 @@ if(!isset($_SESSION['usuario'])){
 	</form>
 
 	<!-- Para al salir del campo cedula buscar en la base de datos si ya tiene registrado el cliente -->
-		<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/jquery.maskedinput.js"></script>
 		<script src="js/global.js"></script>
 </body>
