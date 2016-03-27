@@ -8,6 +8,11 @@
 table tr, th, td{
 	text-align: center;
 }
+.tablewrapper{
+	overflow: hidden;
+	overflow-y: scroll;
+	height: 150px;
+}
 #cabecera{
 	margin-bottom: 80px;
 }

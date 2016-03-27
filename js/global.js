@@ -64,3 +64,4 @@ $('#falla').focusout(function(){
 $('#observacion').focusout(function(){
 	$('#barra').css('width','100%');
 });
+
