@@ -8,3 +8,6 @@
 table tr, th, td{
 	text-align: center;
 }
+#cabecera{
+	margin-bottom: 80px;
+}

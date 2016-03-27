@@ -10,6 +10,7 @@ if(!isset($_SESSION['usuario'])){
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Creacion de Ordenes</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
@@ -18,7 +19,7 @@ if(!isset($_SESSION['usuario'])){
 	<div class="container">
 		<br>
 		<div class="row">			
-			<div class="col-md-4">
+			<div class="col-md-6 col-md-offset-3">
 				<form action="validar_orden.php" method="POST" name="orden">
 					<div class="form-group">
 						<label for="cedula">Cedula:</label>
