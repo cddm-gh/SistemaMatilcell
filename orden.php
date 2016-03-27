@@ -18,8 +18,13 @@ if(!isset($_SESSION['usuario'])){
 <body>
 	<div class="container">
 		<br>
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped active" id="barra" role="progressbar" aria-valuemax="100">
+				
+			</div>
+		</div>
 		<div class="row">			
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-4 col-md-offset-2">
 				<form action="validar_orden.php" method="POST" name="orden">
 					<div class="form-group">
 						<label for="cedula">Cedula:</label>
@@ -119,6 +124,16 @@ if(!isset($_SESSION['usuario'])){
 						<input type="radio" id="cliente_enc" name="equipo_enc" value="nencontrado" checked="true">Equipo NO encontrado <br>
 					</div>
 				</form>	
+			</div>
+			<div class="col-md-4">
+				<form action="" name="pago">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Cantidad a pagar">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Cantidad restante">
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

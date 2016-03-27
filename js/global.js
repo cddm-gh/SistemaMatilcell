@@ -7,6 +7,7 @@ $(document).ready(function($){
 
 //Funcion para al salir del input cedula busca en la BD por esa cedula
 //Si la encuentra regresa los datos de ese cliente y los agrega en los campos correspondientes
+
 $('input#cedula').focusout(function(){
 	var cedula = $('input#cedula').val();
 	if($.trim(cedula) != ''){
@@ -23,6 +24,7 @@ $('input#cedula').focusout(function(){
 			}
 		});
 	}
+	$('#barra').css('width','15%');
 });
 //Lo mismo de la funcion anterior pero buscando el serial del equipo
 $('input#serial').focusout(function(){
@@ -41,4 +43,24 @@ $('input#serial').focusout(function(){
 			}
 		});
 	}
+	$('#barra').css('width','60%');
+});
+
+$('#nombre').focusout(function(){
+	$('#barra').css('width','30%');
+});
+$('#telefono').focusout(function(){
+	$('#barra').css('width','45%');
+});
+$('#marca').focusout(function(){
+	$('#barra').css('width','75%');
+});
+$('#modelo').focusout(function(){
+	$('#barra').css('width','90%');
+});
+$('#falla').focusout(function(){
+	$('#barra').css('width','95%');
+});
+$('#observacion').focusout(function(){
+	$('#barra').css('width','100%');
 });

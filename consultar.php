@@ -24,7 +24,7 @@ if(!isset($_SESSION['usuario'])){
 		<br>
 		<table class="table table-bordered table-hover">
 		<tr class="success">
-			<th>N Orden</th>
+			<th>Orden #</th>
 			<th>Cedula</th>
 			<th>Serial</th>
 			<th>ID Tecnico</th>
