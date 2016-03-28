@@ -41,7 +41,6 @@ $(document).ready(function(){
 //La funcion recibe el ID de la tabla que esta haciendo la llamada
 function clickEnTabla(id_elemento){
 	//leyendo los IDs de los elementos
-	console.log("Hola consola " + id_elemento);
 	var tabla = document.getElementById(id_elemento);
 	var thead = tabla.getElementsByTagName("thead")[0];
 	var tbody = tabla.getElementsByTagName("tbody")[0];
@@ -119,10 +118,10 @@ function clickEnTabla(id_elemento){
 	        el('id_tec').value = row.cells[3].innerHTML;
 	        el('memoria').value = row.cells[4].innerHTML;
 	        el('chip').value = row.cells[5].innerHTML;
-	        el('tapa').value = row.cells[5].innerHTML;
-	        el('falla').value = row.cells[5].innerHTML;
-	        el('observacion').value = row.cells[5].innerHTML;
-	        el('status').value = row.cells[5].innerHTML;
+	        el('tapa').value = row.cells[6].innerHTML;
+	        el('falla').value = row.cells[7].innerHTML;
+	        el('observacion').value = row.cells[8].innerHTML;
+	        el('status').value = row.cells[9].innerHTML;
     	}else if(id_elemento === "tabla_clientes"){
     		el('cedula').value = row.cells[0].innerHTML;
 	        el('nombre').value = row.cells[1].innerHTML;
