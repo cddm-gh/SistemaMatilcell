@@ -92,7 +92,7 @@ if(!isset($_SESSION['usuario'])){
 					<label>Falla(s)</label><br>
 					<textarea name="falla" class="form-control textoMayuscula" id="falla" name="falla" rows="5" cols="25" required wrap="soft" maxlength="50"
 						maxlength="50"></textarea>
-					
+					<br>
 					<select name="tecnicos" class="form-control" id="tecnicos">
 						<option value="nada" selected="true" disabled="true">-- Tecnicos</option>
 						<?php  

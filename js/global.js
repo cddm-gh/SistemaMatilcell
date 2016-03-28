@@ -24,7 +24,8 @@ $('input#cedula').focusout(function(){
 			}
 		});
 	}
-	$('#barra').css('width','15%');
+	if($('#cedula').val().length >= 5)
+		$('#barra').css('width','15%');
 });
 //Lo mismo de la funcion anterior pero buscando el serial del equipo
 $('input#serial').focusout(function(){
@@ -43,23 +44,29 @@ $('input#serial').focusout(function(){
 			}
 		});
 	}
-	$('#barra').css('width','60%');
+	if($('#serial').val().length == 15)
+		$('#barra').css('width','60%');
 });
 
 $('#nombre').focusout(function(){
-	$('#barra').css('width','30%');
+	if($(this).val().length >= 5)
+		$('#barra').css('width','30%');
 });
 $('#telefono').focusout(function(){
-	$('#barra').css('width','45%');
+	if($(this).val().length >= 5)
+		$('#barra').css('width','45%');
 });
 $('#marca').focusout(function(){
-	$('#barra').css('width','75%');
+	if($(this).val().length >= 3)
+		$('#barra').css('width','75%');
 });
 $('#modelo').focusout(function(){
-	$('#barra').css('width','90%');
+	if($(this).val().length >= 3)
+		$('#barra').css('width','90%');
 });
 $('#falla').focusout(function(){
-	$('#barra').css('width','95%');
+	if($(this).val().length >= 5)
+		$('#barra').css('width','95%');
 });
 $('#observacion').focusout(function(){
 	$('#barra').css('width','100%');
