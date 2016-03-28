@@ -12,18 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$password = $_POST['password'];
 	$password = filter_var($password, FILTER_SANITIZE_STRING);
 
-	try {
-		//Datos para realizar la conexion
-		$dbhost = 'localhost';
-		$dbname = 'cl55-cell';
-		$dbuser = 'gory';
-		$dbpass = 'Darkgo13';
-		
-		$conexion = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-
-	} catch (PDOException $e) {
-		echo "Error " . $e->getMessage();
-	}
+	require '/db/connect.php';
 
 	$statement = $conexion->prepare('SELECT * FROM empleados WHERE usuario = :usuario AND password = :password');
 	$statement->execute(array(

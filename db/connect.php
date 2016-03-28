@@ -1,14 +1,20 @@
-<?php 
-	try {
-		//Datos para realizar la conexion
-		$dbhost = 'localhost';
-		$dbname = 'cl55-cell';
-		$dbuser = 'gory';
-		$dbpass = 'Darkgo13';
-		
-		$conexion = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+<?php
+use Project\Helpers\Config;
+require 'app/Config.php';
 
-	} catch (PDOException $e) {
-		echo "Error " . $e->getMessage();
-	}
+$config = new Config;
+$config->load('config.php');
+
+try {
+	//Datos para realizar la conexion
+	$dbhost = $config->get('db.hosts.local');
+	$dbname = $config->get('db.name'); 
+	$dbuser = $config->get('db.user'); 
+	$dbpass = $config->get('db.password'); 
+		
+	$conexion = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+
+} catch (PDOException $e) {
+	echo "Error " . $e->getMessage();
+}	
 ?>
