@@ -24,7 +24,7 @@ if(!isset($_SESSION['usuario'])){
 	
 	<div class="container">
 		<br>
-		<table class="table table-bordered display" id="tabla2">
+		<table class="table table-bordered display" id="tabla_clientes" onclick="clickEnTabla('tabla_clientes');">
 			<thead>
 				<tr class="success">
 					<th>Cedula</th>
@@ -42,6 +42,24 @@ if(!isset($_SESSION['usuario'])){
 				<?php endwhile; ?>
 			</tbody>
 		</table>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-2">
+				<form action="" id="orden">
+						<div class="form-group">
+							<label for="cedula">Cedula</label>
+							<input type="text" name="cedula" id="cedula" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="nombre">Nombre</label>
+							<input type="text" name="nombre" id="nombre" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="telefono">Telefono</label>
+							<input type="text" name="telefono" id="telefono" class="form-control">
+						</div>
+				</form>
+			</div>
+		</div>
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>
