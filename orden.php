@@ -107,7 +107,7 @@ if(!isset($_SESSION['usuario'])){
 							while($row = mysql_fetch_array($sql)){
 								echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
 							}*/
-							while($row = $statement->fetchAll()){
+							while($row = $statement->fetch()){
 								echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
 							}
 						?>

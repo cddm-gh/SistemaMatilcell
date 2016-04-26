@@ -6,7 +6,7 @@ return [
 			'externo' => '217.199.187.194',
 		],
 		'name' => 'cl55-cell',
-		'user' => 'gory',
+		'user' => 'cl55-cell',
 		'password' => 'Darkgo13'
 	],
 	'mail' => [

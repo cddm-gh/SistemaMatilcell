@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         require dirname(__FILE__).'/db/connect.php';
 
-	$statement = $conexion->prepare("SELECT * FROM Empleados WHERE usuario = :usuario AND password = :password;");
+	$statement = $conexion->prepare("SELECT * FROM empleados WHERE usuario = :usuario AND password = :password");
 	$statement->execute(array(
 		':usuario' => $usuario,
 		':password' => $password
