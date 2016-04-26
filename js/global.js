@@ -1,5 +1,27 @@
 //funcion para enmascarar los inputs
 $(document).ready(function($){
+	
+	/*Prueba para saber de que pais se ingresa a la pagina web
+	var requestUrl = "http://ip-api.com/json";
+
+	$.ajax({
+	  url: requestUrl,
+	  type: 'GET',
+	  success: function(json)
+	  {
+	    console.log("My country is: " + json.country);
+	    console.log("My IP address is: " + json.query);
+	    if(json.country === 'Venezuela')
+	    	alert("Go buy food!");
+	    else
+	    	alert("You don't have to buy food");
+	  },
+	  error: function(err)
+	  {
+	    console.log("Request failed, error= " + err);
+	  }
+	});*/
+
 	$('#cedula').mask("99999999");
 	$('#telefono').mask("9999-9999999");
 	$('#serial').mask("999999999999999");
@@ -8,18 +30,20 @@ $(document).ready(function($){
 //Funcion para al salir del input cedula busca en la BD por esa cedula
 //Si la encuentra regresa los datos de ese cliente y los agrega en los campos correspondientes
 
-$('input#cedula').focusout(function(){
-	var cedula = $('input#cedula').val();
-	if($.trim(cedula) != ''){
-		$.post('ajax/buscar.php', {cedula: cedula}, function(data){
+$('#cedula').focusout(function(){
+	var cedula = $('#cedula').val();
+	if($.trim(cedula) !== ''){
+		$.post('buscar.php', {cedula: cedula}, function(data){
 			if(data !== ''){
-				//alert(data);
+				//console.log("I found this " + data);
 				var mitad = data.split('/');
 				$('#nombre').val(mitad[0]);
 				$('#telefono').val(mitad[1]);	
 				$('#serial').focus();	
 				$('#cliente_enc').prop("checked", true);
+				
 			}else{
+				console.log("I didn't got any data =( for this ID " + cedula);
 				$('#cliente_enc').prop("checked", false);
 			}
 		});
@@ -28,10 +52,10 @@ $('input#cedula').focusout(function(){
 		$('#barra').css('width','15%');
 });
 //Lo mismo de la funcion anterior pero buscando el serial del equipo
-$('input#serial').focusout(function(){
-	var serial = $('input#serial').val();
+$('#serial').focusout(function(){
+	var serial = $('#serial').val();
 	if($.trim(serial) != ''){
-		$.post('ajax/buscar.php', {serial: serial}, function(data){
+		$.post('buscar.php', {serial: serial}, function(data){
 			if(data !== ''){
 				//alert(data);
 				var mitad = data.split('/');
@@ -40,6 +64,7 @@ $('input#serial').focusout(function(){
 				$('#modelo').focus();	
 				$('#equipo_enc').prop("checked", true);
 			}else{
+				console.log("No recibi ningun data =(")
 				$('#cliente_enc').prop("checked", false);
 			}
 		});

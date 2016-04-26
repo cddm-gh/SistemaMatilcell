@@ -29,7 +29,7 @@ if(isset($_POST['crear'])){
 		echo "<h1>Error no puede dejar campos vacios!</h1><br>";
 		header('Location: orden.php');
 	}else{
-		require '/db/connect.php';
+		require dirname(__FILE__).'/db/connect.php';
 		//Se debe insertar primero el cliente y el equipo
 		//ya que en la tabla ordenes se usan llaves foraneas y de no ser asi no permitira insertar
 		if($cliente_enc == 'nencontrado'){

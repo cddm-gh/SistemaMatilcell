@@ -1,6 +1,6 @@
 <?php
 use Project\Helpers\Config;
-require 'app/Config.php';
+require dirname(__FILE__).'/'.'../app/Config.php';
 
 $config = new Config;
 $config->load('config.php');

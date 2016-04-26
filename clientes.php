@@ -4,7 +4,7 @@ session_start();
 if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
 }else{
-	require '/db/connect.php';
+	require dirname(__FILE__).'/db/connect.php';
 	$statement = $conexion->prepare('SELECT * FROM clientes');
 	$statement->execute();
 }
