@@ -58,7 +58,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 							<span class="icon-bar"></span>
 						</button>
 						<a href="#" class="navbar-brand">
-							Mundo Matilcell Hola
+							Mundo Matilcell
 						</a>
 					</div>
 
