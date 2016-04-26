@@ -3,6 +3,14 @@ session_start();
 
 if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
+}else{
+	$usuario = $_SESSION['usuario'];
+	require_once dirname(__FILE__).'/db/connect.php';
+	$statement = $conexion->prepare("SELECT nombre FROM empleados WHERE usuario = :usuario");
+	$statement->execute(array(
+		':usuario' => $usuario
+	));
+	$nombre = $statement->fetch();
 }
 
 ?>
@@ -19,6 +27,7 @@ if(!isset($_SESSION['usuario'])){
 	
 	<div class="contenedor">
 		<h1 class="titulo">Contenido del sitio</h1>
+		<h2>Bienvenido <?php echo $nombre['nombre']; ?></h2>
 		<a href="cerrar.php">Cerrar Sesion</a>
 		<hr>
 		<div class="contenido">
