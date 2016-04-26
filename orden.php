@@ -3,6 +3,10 @@ session_start();
 
 if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
+}else{
+	require_once dirname(__FILE__).'/db/connect.php';
+	$statement = $conexion->prepare('SELECT * FROM tecnicos');
+	$statement->execute();
 }
 
 ?>
@@ -95,11 +99,15 @@ if(!isset($_SESSION['usuario'])){
 					<br>
 					<select name="tecnicos" class="form-control" id="tecnicos">
 						<option value="nada" selected="true" disabled="true">-- Tecnicos</option>
-						<?php  
-							mysql_connect('localhost','gory','Darkgo13');
+						<?php
+							//Acomodar esta funcion que es obsoleta
+							/*mysql_connect('localhost','gory','Darkgo13');
 							mysql_select_db('cl55-cell');
 							$sql = mysql_query("SELECT * FROM tecnicos");
 							while($row = mysql_fetch_array($sql)){
+								echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
+							}*/
+							while($row = $statement->fetch()){
 								echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
 							}
 						?>
