@@ -27,7 +27,7 @@ ini_set('display_errors', '1');
 		));
 
 		$resultado2 = $statement->fetch();
-
+		
 		if($resultado2 != false){
 			echo $resultado2[1]."/".$resultado2[2];
 		}else
