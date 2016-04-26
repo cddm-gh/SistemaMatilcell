@@ -58,6 +58,7 @@ if(!isset($_SESSION['usuario'])){
 					</tbody>
 				</table>
 			</div>
+		<!-- TODO acomodar el formulario para que ocupe mas ancho y menos alto 2 columnas -->
 			<div class="row">
 				<div class="col-md-6 col-md-offset-2">
 				<!-- Agregar formulario para al dar click en una fila de la tabla mostrar los datos y poder editar -->

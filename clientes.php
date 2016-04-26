@@ -42,6 +42,7 @@ if(!isset($_SESSION['usuario'])){
 				<?php endwhile; ?>
 			</tbody>
 		</table>
+		<!-- TODO acomodar el formulario para mostrar en 2 columnas -->
 		<div class="row">
 			<div class="col-md-6 col-md-offset-2">
 				<form action="" id="orden">
@@ -60,6 +61,8 @@ if(!isset($_SESSION['usuario'])){
 				</form>
 			</div>
 		</div>
+
+		<!-- TODO posibilidad de editar los datos de un cliente y actualizarlos-->
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>

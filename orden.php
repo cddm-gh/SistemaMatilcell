@@ -67,28 +67,19 @@ if(!isset($_SESSION['usuario'])){
 					</div>
 					<hr>
 						<div class="form-group">
-							<label>Memoria SD: <br>
-								<input type="radio" id="memorias" name="memoria" value="si">SI 
-							</label>
-							<label>
-								<input type="radio" id="memorian" name="memoria" value="no" checked="true">NO 
-							</label>
+							<label>Memoria SD:</label><br>
+							<input type="radio" id="memorias" name="memoria" value="si">SI
+							<input type="radio" id="memorian" name="memoria" value="no" checked="true">NO
 						</div>
 						<div class="form-group">
-							<label>SIM Card: <br>
-								<input type="radio" id="chips" name="chip" value="si">SI
-							</label>
-							<label>
-								<input type="radio" id="chipn" name="chip" value="no" checked="true">NO
-							</label>
+							<label>SIM Card:</label><br>
+							<input type="radio" id="chips" name="chip" value="si">SI
+							<input type="radio" id="chipn" name="chip" value="no" checked="true">NO
 						</div>
 						<div class="form-group">
-							<label>Tapa: <br>
-								<input type="radio" id="tapas" name="tapa" value="si" checked="true">SI
-							</label>
-							<label>
-								<input type="radio" id="tapan" name="tapa" value="no">NO 
-							</label>	
+							<label>Tapa:</label><br>
+							<input type="radio" id="tapas" name="tapa" value="si" checked="true">SI
+							<input type="radio" id="tapan" name="tapa" value="no">NO
 						</div>
 					
 					<hr>
@@ -100,13 +91,6 @@ if(!isset($_SESSION['usuario'])){
 					<select name="tecnicos" class="form-control" id="tecnicos">
 						<option value="nada" selected="true" disabled="true">-- Tecnicos</option>
 						<?php
-							//Acomodar esta funcion que es obsoleta
-							/*mysql_connect('localhost','gory','Darkgo13');
-							mysql_select_db('cl55-cell');
-							$sql = mysql_query("SELECT * FROM tecnicos");
-							while($row = mysql_fetch_array($sql)){
-								echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
-							}*/
 							while($row = $statement->fetch()){
 								echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
 							}
@@ -133,6 +117,7 @@ if(!isset($_SESSION['usuario'])){
 					</div>
 				</form>	
 			</div>
+			<!-- TODO finalizar los inputs para precio y pago -->
 			<div class="col-md-4">
 				<form action="" name="pago">
 					<div class="form-group">
