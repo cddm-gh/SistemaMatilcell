@@ -113,18 +113,18 @@ if(!isset($_SESSION['usuario'])){
 					<div class="col-md-2">
 						<label>Total:</label><br>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Cantidad a pagar">
+							<input type="number" class="form-control" name="total" id="total" placeholder="Cantidad a pagar">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Cantidad abonada">
+							<input type="number" class="form-control" name="abono" id="abono" placeholder="Cantidad abonada">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Cantidad restante">
+							<input type="number" class="form-control" name="resta" id="resta" placeholder="Cantidad restante" readonly>
 						</div>
 					</div>
 
 					<div class="row">
-						<div class="col-md-4 col-md-offset-4">
+						<div class="col-md-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-2">
 							<input type="submit" class="btn btn-success btn-lg" name="crear" value="Crear Orden">
 							<input type="reset" class="btn btn-primary btn-lg" value="Limpiar Formulario"><br>
 						</div>
