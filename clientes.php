@@ -7,6 +7,7 @@ if(!isset($_SESSION['usuario'])){
 	require dirname(__FILE__).'/db/connect.php';
 	$statement = $conexion->prepare('SELECT * FROM clientes');
 	$statement->execute();
+
 }
 ?>
 <!DOCTYPE html>
@@ -44,11 +45,11 @@ if(!isset($_SESSION['usuario'])){
 		</table>
 		<!-- TODO acomodar el formulario para mostrar en 2 columnas -->
 		<div class="row">
-			<div class="col-md-6 col-md-offset-2">
+			<div class="col-md-6 col-md-offset-3">
 				<form action="" id="orden">
 						<div class="form-group">
 							<label for="cedula">Cedula</label>
-							<input type="text" name="cedula" id="cedula" class="form-control">
+							<input type="text" name="cedula" id="cedula" class="form-control" readonly>
 						</div>
 						<div class="form-group">
 							<label for="nombre">Nombre</label>
@@ -62,12 +63,17 @@ if(!isset($_SESSION['usuario'])){
 			</div>
 		</div>
 
-		<!-- TODO posibilidad de editar los datos de un cliente y actualizarlos-->
+		<div class="row">
+			<div class="col-md-6 col-md-offset-5">
+				<button class="btn btn-info" id="btn_actualizar">Actualizar Datos</button>
+			</div>
+		</div>
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
+	<script type="text/javascript" src="js/actualizar_datos.js"></script>
 </body>
 </html>
