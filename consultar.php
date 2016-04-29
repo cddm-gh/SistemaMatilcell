@@ -58,22 +58,21 @@ if(!isset($_SESSION['usuario'])){
 					</tbody>
 				</table>
 			</div>
-		<!-- TODO acomodar el formulario para que ocupe mas ancho y menos alto 2 columnas -->
 			<div class="row">
-				<div class="col-md-6 col-md-offset-2">
+				<div class="col-md-6">
 				<!-- Agregar formulario para al dar click en una fila de la tabla mostrar los datos y poder editar -->
 					<form action="" id="orden">
 						<div class="form-group">
 							<label for="norden">Orden #</label>
-							<input type="text" name="norden" id="norden" class="form-control">
+							<input type="text" name="norden" id="norden" class="form-control" readonly>
 						</div>
 						<div class="form-group">
 							<label for="cedula">Cedula</label>
-							<input type="text" name="cedula" id="cedula" class="form-control">
+							<input type="text" name="cedula" id="cedula" class="form-control" readonly>
 						</div>
 						<div class="form-group">
 							<label for="serial">Serial</label>
-							<input type="text" name="serial" id="serial" class="form-control">
+							<input type="text" name="serial" id="serial" class="form-control" readonly>
 						</div>
 						<div class="form-group">
 							<label for="id_tec">ID Tecnico</label>
@@ -83,6 +82,10 @@ if(!isset($_SESSION['usuario'])){
 							<label for="memoria">Memoria</label>
 							<input type="text" name="memoria" id="memoria" class="form-control">
 						</div>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<form action="">
 						<div class="form-group">
 							<label for="chip">Chip:</label>
 							<input type="text" name="chip" id="chip" class="form-control">
@@ -106,12 +109,17 @@ if(!isset($_SESSION['usuario'])){
 					</form>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-5">
+					<button class="btn btn-info" id="actualizar">Actualizar Datos</button>
+				</div>
+			</div>
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
-	
+	<script type="text/javascript" src="js/actualizar_datos.js"></script>
 </body>
 </html>

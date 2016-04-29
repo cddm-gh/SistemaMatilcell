@@ -43,7 +43,6 @@ if(!isset($_SESSION['usuario'])){
 				<?php endwhile; ?>
 			</tbody>
 		</table>
-		<!-- TODO acomodar el formulario para mostrar en 2 columnas -->
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<form action="" id="orden">
