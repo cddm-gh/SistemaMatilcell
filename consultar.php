@@ -102,10 +102,14 @@ if(!isset($_SESSION['usuario'])){
 							<label for="observacion">Observacion:</label>
 							<textarea name="observacion" id="observacion" class="form-control"></textarea>
 						</div>
-						<div class="form-group">
-							<label for="status">Status:</label>
-							<input type="text" name="status" id="status" class="form-control">
-						</div>
+
+                        <label for="estado">Estado del Equipo:</label>
+                        <select name="estado" class="form-control" id="estado">
+                            <option value="nada" selected="true" disabled="true">-- Estado</option>
+                            <option value="recibido" name="recibido">Recibido</option>
+                            <option value="reparado" name="reparado">Reparado</option>
+                            <option value="entregado" name="entregado">Entregado</option>
+                        </select><br>
 					</form>
 				</div>
 			</div>
