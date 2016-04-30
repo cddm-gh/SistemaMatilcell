@@ -16,8 +16,7 @@ if(isset($_POST['tec']) and isset($_POST['mem']) and isset($_POST['sim'])
     $falla = $_POST['fail'];
     $observacion = $_POST['observ'];
     $status = $_POST['stat'];
-    echo 'Hola ordenes';
-    var_dump($_POST);
+    
     require dirname(__FILE__).'/db/connect.php';
     $statement = $conexion->prepare('UPDATE ordenes SET id_tec = :tecnico, memoria = :memoria, 
                                     chip = :chip, tapa = :tapa, falla = :falla, 

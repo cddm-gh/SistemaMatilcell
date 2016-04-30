@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c2e7189-f04f-48aa-a2e0-ef29ae4387d7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contenido.php" afterPath="$PROJECT_DIR$/contenido.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/tablas.js" afterPath="$PROJECT_DIR$/js/tablas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/consultar.php" afterPath="$PROJECT_DIR$/consultar.php" />
     </list>
     <ignored path="SistemaMatilcell.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -304,7 +303,7 @@
       <workItem from="1461674329026" duration="2427000" />
       <workItem from="1461890077646" duration="10274000" />
       <workItem from="1461927088107" duration="5349000" />
-      <workItem from="1462025397691" duration="1941000" />
+      <workItem from="1462025397691" duration="2530000" />
     </task>
     <task id="LOCAL-00001" summary="Primera correccion de la funcion obsoleta mysql_connect&#10;en orden.php para llenar el dropdown con los tecnicos desde la BD">
       <created>1461634381492</created>
@@ -373,7 +372,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28471000" />
+    <option name="totallyTimeSpent" value="29060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

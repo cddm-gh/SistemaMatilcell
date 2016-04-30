@@ -126,7 +126,7 @@ function clickEnTabla(id_elemento){
 	        el('falla').value = row.cells[7].innerHTML;
 	        el('observacion').value = row.cells[8].innerHTML;
             //el('status').value = row.cells[9].innerHTML;
-            console.log(row.cells[9]);
+            
 	        if(row.cells[9].innerHTML === "recibido"){
                 $('#estado option:contains("Recibido")').attr("selected",true);
             }else if(row.cells[9].innerHTML === "reparado"){
