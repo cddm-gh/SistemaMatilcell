@@ -1,0 +1,16 @@
+{
+    "remotePath": "/public_html/proyecto",
+    "host": "ftp.gorydev.net.ve",
+    "username": "gorydev.net.ve",
+    "password": "Darkgo13.",
+    "port": 21,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git"
+    ]
+}

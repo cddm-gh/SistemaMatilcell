@@ -15,7 +15,9 @@ $(document).ready(function(){
             	"next": "Siguiente",
             	"previous": "Anterior"
             }
-        }
+        },
+        "autoWidth": true,
+        "iDisplayLength": 25
 	});
 	//Tabla Clientes
 	$('#tabla_clientes').dataTable({
@@ -32,7 +34,9 @@ $(document).ready(function(){
             	"next": "Siguiente",
             	"previous": "Anterior"
             }
-        }
+        },
+        "autoWidth": true,
+        "iDisplayLength": 25
 	});
 	//Tabla Equipos
 

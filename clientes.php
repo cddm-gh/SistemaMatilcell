@@ -44,20 +44,26 @@ if(!isset($_SESSION['usuario'])){
 			</tbody>
 		</table>
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-12">
 				<form action="" id="orden">
+					<div class="col-md-4">
 						<div class="form-group">
 							<label for="cedula">Cedula</label>
 							<input type="text" name="cedula" id="cedula" class="form-control" readonly>
 						</div>
+					</div>
+					<div class="col-md-4">
 						<div class="form-group">
 							<label for="nombre">Nombre</label>
 							<input type="text" name="nombre" id="nombre" class="form-control">
 						</div>
+					</div>
+					<div class="col-md-4">
 						<div class="form-group">
 							<label for="telefono">Telefono</label>
 							<input type="text" name="telefono" id="telefono" class="form-control">
 						</div>
+					</div>
 				</form>
 			</div>
 		</div>
