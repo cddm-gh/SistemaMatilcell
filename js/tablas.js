@@ -15,7 +15,9 @@ $(document).ready(function(){
             	"next": "Siguiente",
             	"previous": "Anterior"
             }
-        }
+        },
+        "autoWidth": true,
+        "iDisplayLength": 25
 	});
 	//Tabla Clientes
 	$('#tabla_clientes').dataTable({
@@ -32,7 +34,9 @@ $(document).ready(function(){
             	"next": "Siguiente",
             	"previous": "Anterior"
             }
-        }
+        },
+        "autoWidth": true,
+        "iDisplayLength": 25
 	});
 	//Tabla Equipos
 
@@ -121,7 +125,18 @@ function clickEnTabla(id_elemento){
 	        el('tapa').value = row.cells[6].innerHTML;
 	        el('falla').value = row.cells[7].innerHTML;
 	        el('observacion').value = row.cells[8].innerHTML;
-	        el('status').value = row.cells[9].innerHTML;
+            //el('status').value = row.cells[9].innerHTML;
+            
+	        if(row.cells[9].innerHTML === "recibido"){
+                $('#estado option:contains("Recibido")').attr("selected",true);
+            }else if(row.cells[9].innerHTML === "reparado"){
+                $('#estado option:contains("Reparado")').attr("selected",true);
+            }else if(row.cells[9].innerHTML === "entregado"){
+                $('#estado option:contains("Entregado")').attr("selected",true);
+            }else{
+                $('#estado option:contains("-- Estado")').attr("selected",true);
+            }
+
     	}else if(id_elemento === "tabla_clientes"){
     		el('cedula').value = row.cells[0].innerHTML;
 	        el('nombre').value = row.cells[1].innerHTML;

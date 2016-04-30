@@ -97,3 +97,19 @@ $('#observacion').focusout(function(){
 	$('#barra').css('width','100%');
 });
 
+//Funciones para restar y actualizar el Total de la orden
+$('#total').focusout(function(){
+    if(!$(this).val()){
+        $(this).focus();
+    }
+});
+$('#abono').focusout(function () {
+    if(!$(this).val()){
+        $(this).focus();
+    }else{
+        var total = parseFloat($('#total').val());
+        var abono =  parseFloat($('#abono').val());
+        var resta = total - abono;
+        $('#resta').val(resta);
+    }
+});

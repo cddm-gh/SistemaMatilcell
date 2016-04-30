@@ -7,6 +7,7 @@ if(!isset($_SESSION['usuario'])){
 	require dirname(__FILE__).'/db/connect.php';
 	$statement = $conexion->prepare('SELECT * FROM clientes');
 	$statement->execute();
+
 }
 ?>
 <!DOCTYPE html>
@@ -43,21 +44,33 @@ if(!isset($_SESSION['usuario'])){
 			</tbody>
 		</table>
 		<div class="row">
-			<div class="col-md-6 col-md-offset-2">
-				<form action="" id="orden">
+			<div class="col-md-12">
+				<form action="" method="POST" id="orden">
+					<div class="col-md-4">
 						<div class="form-group">
 							<label for="cedula">Cedula</label>
-							<input type="text" name="cedula" id="cedula" class="form-control">
+							<input type="text" name="cedula" id="cedula" class="form-control" readonly>
 						</div>
+					</div>
+					<div class="col-md-4">
 						<div class="form-group">
 							<label for="nombre">Nombre</label>
 							<input type="text" name="nombre" id="nombre" class="form-control">
 						</div>
+					</div>
+					<div class="col-md-4">
 						<div class="form-group">
 							<label for="telefono">Telefono</label>
 							<input type="text" name="telefono" id="telefono" class="form-control">
 						</div>
+					</div>
 				</form>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-md-offset-5">
+				<button class="btn btn-info" id="btn_actualizar">Actualizar Datos</button>
 			</div>
 		</div>
 	</div>
@@ -66,5 +79,6 @@ if(!isset($_SESSION['usuario'])){
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
+	<script type="text/javascript" src="js/actualizar_datos.js"></script>
 </body>
 </html>

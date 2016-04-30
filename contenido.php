@@ -26,7 +26,7 @@ if(!isset($_SESSION['usuario'])){
 <body>
 	
 	<div class="contenedor">
-		<h1 class="titulo">Contenido del sitio</h1>
+		<h1 class="titulo">Panel de control del sistema</h1>
 		<h2>Bienvenido <?php echo $nombre['nombre']; ?></h2>
 		<a href="cerrar.php">Cerrar Sesion</a>
 		<hr>
