@@ -72,12 +72,12 @@ if(!isset($_SESSION['usuario'])){
 					</div>
 					<div class="col-md-1">
 						<div class="form-group">
-							<label>Memoria SD:</label><br>
+							<label>Memoria:</label><br>
 							<input type="radio" id="memorias" name="memoria" value="si">SI
 							<input type="radio" id="memorian" name="memoria" value="no" checked="true">NO
 						</div>
 						<div class="form-group">
-							<label>SIM Card:</label><br>
+							<label>SIM:</label><br>
 							<input type="radio" id="chips" name="chip" value="si">SI
 							<input type="radio" id="chipn" name="chip" value="no" checked="true">NO
 						</div>
@@ -94,6 +94,7 @@ if(!isset($_SESSION['usuario'])){
 						<textarea name="falla" class="form-control textoMayuscula" id="falla" name="falla" rows="5" cols="25" required wrap="soft" maxlength="50"
 							maxlength="50"></textarea>
 						<br>
+                            <label for="tecnicos">Reparar Con:</label>
 						<select name="tecnicos" class="form-control" id="tecnicos">
 							<option value="nada" selected="true" disabled="true">-- Tecnicos</option>
 							<?php
@@ -101,7 +102,7 @@ if(!isset($_SESSION['usuario'])){
 									echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
 								}
 							?>
-						</select>
+						</select><br>
 
 						<label>Observacion(es)</label><br>
 						<textarea name="observacion" class="form-control textoMayuscula" id="observacion" name="observacion" rows="5" cols="25"

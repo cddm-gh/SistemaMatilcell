@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6f7cf58b-542f-4747-a001-27cb95649148" name="gorydev" url="http://ftp.gorydev.net.ve">
+        <fileTransfer host="ftp.gorydev.net.ve" port="21" password="dfeedfcbdfd8dfc1dfcddfc5df9bdf99df84" username="gorydev.net.ve">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
