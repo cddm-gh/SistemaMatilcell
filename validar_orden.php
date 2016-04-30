@@ -66,8 +66,6 @@ if(isset($_POST['crear'])){
 				':status' => $status
 				)
 			);
-			echo "<h1>Orden creada!</h1><br>";
-			echo '<a href="orden.php">Volver al formulario.';
 
 		}catch(PDOException $e){
 			echo "<h2> No se pudo crear la orden " . $e->getMessage();
@@ -78,3 +76,20 @@ if(isset($_POST['crear'])){
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validacion de la Orden</title>
+</head>
+<body>
+	
+	<p><h1>Orden creada con exito!</h1></p>
+	<script>
+	window.setTimeout(function() {
+		window.location = 'orden.php';
+	}, 2000);
+	</script>
+</body>
+</html>
