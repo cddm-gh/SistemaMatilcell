@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$_SESSION['usuario'] = $usuario;
 		header('Location: index.php');
 	}else{
-		$errores .= '<li>Datos incorrectossssssss.</li>';
+		$errores .= '<li>Datos incorrectos.</li>';
 	}
 }
 
