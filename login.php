@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$_SESSION['usuario'] = $usuario;
 		header('Location: index.php');
 	}else{
-		$errores .= 'Nombre de usuario o password incorrecto, intente nuevamente';
+		$errores .= 'Nombre de usuario o password incorrecto, por favor intente nuevamente';
 	}
 }
 
