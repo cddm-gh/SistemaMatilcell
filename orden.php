@@ -16,7 +16,8 @@ if(!isset($_SESSION['usuario'])){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Creacion de Ordenes</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -33,8 +34,9 @@ if(!isset($_SESSION['usuario'])){
 					<div class="col-md-3">
 						<div class="form-group">
 							<label for="cedula">Cedula:</label>
+							
 							<input type="text" class="form-control" id="cedula" name="cedula" placeholder="Numero De Cedula" required="true"
-								autofocus="true" maxlength="9">
+								autofocus="true" maxlength="9">							
 						</div>
 
 						<div class="form-group">

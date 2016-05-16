@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Login del Sistema</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -67,7 +67,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  
 							class="navbar-form navbar-right" method="POST" name="login">
 							<div class="form-group">
+								
 								<input type="text" name="usuario" class="form-control" id="usuario" placeholder="Nombre de Usuario">
+								
+							</div>
+							<div class="form-group">	
 								<input type="password" name="password" class="form-control" id="password" placeholder="Password">
 							</div>
 							<input type="submit" class="btn btn-success" value="Entrar">
@@ -83,6 +87,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			<?php
 				if( $errores !== ""){
 					echo '<div class="alert alert-danger">'; 
+					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
 					echo $errores; 
 					echo '</div>';
 				}
