@@ -66,13 +66,24 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						
 						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  
 							class="navbar-form navbar-right" method="POST" name="login">
+<<<<<<< HEAD
 							<div class="form-group">
 								
 								<input type="text" name="usuario" class="form-control" id="usuario" placeholder="Nombre de Usuario">
 								
 							</div>
 							<div class="form-group">	
+=======
+							<div class="form-group has-feedback">
+								<label class="control-label" for="usuario"></label>
+								<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
+								<span class="glyphicon glyphicon-user form-control-feedback"></span>
+							</div>
+							<div class="form-group has-feedback">
+								<label class="control-label" for="usuario"></label>
+>>>>>>> 453728b11bd83e6efcc7b1e1179b2cb8d1152363
 								<input type="password" name="password" class="form-control" id="password" placeholder="Password">
+								<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 							</div>
 							<input type="submit" class="btn btn-success" value="Entrar">
 						</form>
@@ -86,14 +97,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		<section>
 			<?php
 				if( $errores !== ""){
+<<<<<<< HEAD
 					echo '<div class="alert alert-danger">'; 
 					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
 					echo $errores; 
 					echo '</div>';
+=======
+					echo '<div class="alert alert-danger" role="alert">
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span class="sr-only">Error:</span>';
+					echo $errores;
+					echo '</div>'; 
+>>>>>>> 453728b11bd83e6efcc7b1e1179b2cb8d1152363
 				}
 			?>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias obcaecati vel porro, reprehenderit doloremque laudantium esse eligendi quod aliquid consequatur, officiis velit! Nam reiciendis nostrum dolor distinctio consequatur veritatis, sequi optio atque ratione minima incidunt ad beatae veniam fugit, pariatur consequuntur illum dignissimos natus explicabo alias. Dolores minima ullam, quas magni, vitae inventore voluptatem officiis dicta est omnis quibusdam, facilis rem illo voluptatum sapiente. Possimus, deserunt ex eos explicabo, error nemo doloremque delectus laboriosam, aliquam, eum numquam quam porro praesentium corrupti a! Voluptates ab sapiente incidunt, harum illum dolorem, culpa hic, illo similique iste molestias aut temporibus. Facere beatae iusto praesentium id eveniet unde dolorum, voluptatum iure. Molestiae rerum reprehenderit odio fugiat nihil quae ea autem, expedita facilis a doloribus cupiditate aspernatur amet facere, sit, ipsa nemo praesentium. Esse laboriosam error ex tenetur consequatur saepe corporis minima repudiandae velit cupiditate corrupti, tempora est modi, atque nihil nostrum architecto amet similique aut quam, facere nulla a numquam culpa. Nihil doloribus molestiae ullam molestias commodi modi consequatur, eum est et porro eligendi possimus earum repellendus asperiores amet similique facere. Assumenda unde laboriosam officia, voluptas maiores, nemo obcaecati ipsum asperiores quasi quos dolore minima veritatis, perferendis. Totam optio nulla soluta perferendis nisi qui.
+				NeogioPruebaLorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias obcaecati vel porro, reprehenderit doloremque laudantium esse eligendi quod aliquid consequatur, officiis velit! Nam reiciendis nostrum dolor distinctio consequatur veritatis, sequi optio atque ratione minima incidunt ad beatae veniam fugit, pariatur consequuntur illum dignissimos natus explicabo alias. Dolores minima ullam, quas magni, vitae inventore voluptatem officiis dicta est omnis quibusdam, facilis rem illo voluptatum sapiente. Possimus, deserunt ex eos explicabo, error nemo doloremque delectus laboriosam, aliquam, eum numquam quam porro praesentium corrupti a! Voluptates ab sapiente incidunt, harum illum dolorem, culpa hic, illo similique iste molestias aut temporibus. Facere beatae iusto praesentium id eveniet unde dolorum, voluptatum iure. Molestiae rerum reprehenderit odio fugiat nihil quae ea autem, expedita facilis a doloribus cupiditate aspernatur amet facere, sit, ipsa nemo praesentium. Esse laboriosam error ex tenetur consequatur saepe corporis minima repudiandae velit cupiditate corrupti, tempora est modi, atque nihil nostrum architecto amet similique aut quam, facere nulla a numquam culpa. Nihil doloribus molestiae ullam molestias commodi modi consequatur, eum est et porro eligendi possimus earum repellendus asperiores amet similique facere. Assumenda unde laboriosam officia, voluptas maiores, nemo obcaecati ipsum asperiores quasi quos dolore minima veritatis, perferendis. Totam optio nulla soluta perferendis nisi qui.
 			</p>
 		</section>
 	</div>
