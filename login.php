@@ -66,24 +66,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						
 						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  
 							class="navbar-form navbar-right" method="POST" name="login">
-<<<<<<< HEAD
+								
 							<div class="form-group">
-								
-								<input type="text" name="usuario" class="form-control" id="usuario" placeholder="Nombre de Usuario">
-								
-							</div>
-							<div class="form-group">	
-=======
-							<div class="form-group has-feedback">
 								<label class="control-label" for="usuario"></label>
 								<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
-								<span class="glyphicon glyphicon-user form-control-feedback"></span>
 							</div>
-							<div class="form-group has-feedback">
+							<div class="form-group">
 								<label class="control-label" for="usuario"></label>
->>>>>>> 453728b11bd83e6efcc7b1e1179b2cb8d1152363
 								<input type="password" name="password" class="form-control" id="password" placeholder="Password">
-								<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 							</div>
 							<input type="submit" class="btn btn-success" value="Entrar">
 						</form>
@@ -97,18 +87,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		<section>
 			<?php
 				if( $errores !== ""){
-<<<<<<< HEAD
 					echo '<div class="alert alert-danger">'; 
 					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
 					echo $errores; 
 					echo '</div>';
-=======
-					echo '<div class="alert alert-danger" role="alert">
-							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-							<span class="sr-only">Error:</span>';
-					echo $errores;
-					echo '</div>'; 
->>>>>>> 453728b11bd83e6efcc7b1e1179b2cb8d1152363
 				}
 			?>
 			<p>
