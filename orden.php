@@ -124,6 +124,19 @@ if(!isset($_SESSION['usuario'])){
 						<div class="form-group">
 							<input type="number" class="form-control" name="resta" id="resta" placeholder="Cantidad restante" readonly>
 						</div>
+						
+						<div class="control-group">
+							<label for="fecha" class="control-label">Fecha</label>
+							<div class="controls">
+								<div class="input-group">
+									<label for="fecha" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+
+									</label>
+									<input id="fecha" name="fecha" type="text" class="form-control" readonly/>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 
 					<div class="row">
@@ -143,6 +156,8 @@ if(!isset($_SESSION['usuario'])){
 						<input type="radio" id="cliente_enc" name="equipo_enc" value="nencontrado" checked="true">Equipo NO encontrado <br>
 					</div>
 				</form>
+				
+				
 		</div>
 	</div>
 	
@@ -150,6 +165,7 @@ if(!isset($_SESSION['usuario'])){
 	<!-- Para al salir del campo cedula buscar en la base de datos si ya tiene registrado el cliente -->
 		<script src="js/jquery-1.12.2.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-datepicker.js"></script>
 		<script src="js/jquery.maskedinput.js"></script>
 		<script src="js/global.js"></script>
 </body>
