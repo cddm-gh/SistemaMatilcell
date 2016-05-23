@@ -6,10 +6,8 @@
  * Time: 09:44 PM
  */
 if(isset($_POST['tec']) and isset($_POST['mem']) and isset($_POST['sim'])
-    and isset($_POST['back']) and isset($_POST['fall']) and isset($_POST['observ']) and isset($_POST['stat'])
-    and isset($_POST['fecha']) and isset($_POST['total']) and isset($_POST['abono']) and isset($_POST['resta'])){
+    and isset($_POST['back']) and isset($_POST['fall']) and isset($_POST['observ']) and isset($_POST['stat'])){
         
-    var_dump($_POST);
 
     $norden = $_POST['orden'];
     $tecnico = $_POST['tec'];

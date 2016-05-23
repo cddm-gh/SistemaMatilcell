@@ -69,7 +69,7 @@ if(!isset($_SESSION['usuario'])){
 			<div class="row">
 				<div class="col-md-12">
 				<!-- Agregar formulario para al dar click en una fila de la tabla mostrar los datos y poder editar -->
-					<form action="actualizar_ordenes.php" method="POST" id="orden" role="form">
+					<form action="" method="POST" id="orden">
 						<div class="col-md-2">
 							<div class="form-group">
 								<label for="norden">Orden #</label>
