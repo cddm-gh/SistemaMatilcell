@@ -32,7 +32,7 @@ if(!isset($_SESSION['usuario'])){
 		<hr>
 		<div class="contenido">
 			<a href="orden.php" target="blank">Crear Nueva Orden</a><br>
-			<a href="consultar.php" target="blank">Consultar Ordenes</a><br>
+			<a href="consultar_clientes.php" target="blank">Consultar Ordenes</a><br>
 			<a href="clientes.php" target="blank">Consultar Clientes</a><br>
 		</div>
 	</div>

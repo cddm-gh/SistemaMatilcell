@@ -62,10 +62,11 @@ function clickEnTabla(id_elemento){
 		row.className = row.className === "highlighted" ? "" : "highlighted";
 		ishigh = row;
 		//enviar la fila que se ha clickeado
+        console.log('Hola consola');
 		llenarCampos(row, id_elemento);
 	}
 	//Una vez clickeada una fila se puede mover con las flechas para ir seleccionando
-	/*document.onkeydown = function (e) {
+	document.onkeydown = function (e) {
         e = e || event;
         var code = e.keyCode,
             rowslim = tabla.rows.length - 2,
@@ -98,7 +99,7 @@ function clickEnTabla(id_elemento){
         }
         
         llenarCampos(trs[nu],id);
-    }*/
+    }
 
     function rowindex(row) {
         var rows = id_elemento.rows,
@@ -125,15 +126,24 @@ function clickEnTabla(id_elemento){
 	        el('tapa').value = row.cells[6].innerHTML;
 	        el('falla').value = row.cells[7].innerHTML;
 	        el('observacion').value = row.cells[8].innerHTML;
-            //el('status').value = row.cells[9].innerHTML;
+            el('estado').value = row.cells[9].innerHTML;
+            el('fecha').value = row.cells[10].innerHTML;
+            el('total').value = row.cells[11].innerHTML;
+            el('abono').value = row.cells[12].innerHTML;
+            el('resta').value = row.cells[13].innerHTML;
+            
+            console.log("celda " + row.cells[9].innerHTML);
             
 	        if(row.cells[9].innerHTML === "recibido"){
                 $('#estado option:contains("Recibido")').attr("selected",true);
-            }else if(row.cells[9].innerHTML === "reparado"){
+            }
+            if(row.cells[9].innerHTML === "reparado"){
                 $('#estado option:contains("Reparado")').attr("selected",true);
-            }else if(row.cells[9].innerHTML === "entregado"){
+            }
+            if(row.cells[9].innerHTML === "entregado"){
                 $('#estado option:contains("Entregado")').attr("selected",true);
-            }else{
+            }
+            if(row.cells[9].innerHTML === ""){
                 $('#estado option:contains("-- Estado")').attr("selected",true);
             }
 
@@ -141,6 +151,7 @@ function clickEnTabla(id_elemento){
     		el('cedula').value = row.cells[0].innerHTML;
 	        el('nombre').value = row.cells[1].innerHTML;
 	        el('telefono').value = row.cells[2].innerHTML;
+            console.log("hola consola clientes");
     	} else{
     		console.log("No existe ese elemento.");
     	}

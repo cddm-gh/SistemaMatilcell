@@ -22,12 +22,12 @@ if(!isset($_SESSION['usuario'])){
 
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 			<div class="row">
-				<table class="table table-bordered display" id="tabla_ordenes" onclick="clickEnTabla('tabla_ordenes');">
+				<table class="table table-bordered table-condensed" id="tabla_ordenes" onclick="clickEnTabla('tabla_ordenes');">
 					<thead>
-						<tr class="success">
+						<tr class="info">
 							<th>Orden #</th>
 							<th>Cedula</th>
 							<th>Serial</th>
@@ -38,6 +38,10 @@ if(!isset($_SESSION['usuario'])){
 							<th>Falla</th>
 							<th>Observacion</th>
 							<th>Status</th>
+							<th>Fecha</th>
+							<th>Total</th>
+							<th>Abono</th>
+							<th>Restante</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -53,6 +57,10 @@ if(!isset($_SESSION['usuario'])){
 								<td><?php echo $row[7]; ?></td>
 								<td><?php echo $row[8]; ?></td>
 								<td><?php echo $row[9]; ?></td>
+								<td><?php echo $row[10]; ?></td>
+								<td><?php echo $row[11]; ?></td>
+								<td><?php echo $row[12]; ?></td>
+								<td><?php echo $row[13]; ?></td>
 							</tr>
 						<?php endwhile; ?>
 					</tbody>
@@ -125,6 +133,33 @@ if(!isset($_SESSION['usuario'])){
 									<option value="reparado" name="reparado">Reparado</option>
 									<option value="entregado" name="entregado">Entregado</option>
 								</select><br>	
+							</div>
+						</div>
+						<div class="row">
+							
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="fecha">Fecha:</label>
+									<input type="text" name="fecha" id="fecha" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="total">Total:</label>
+									<input type="text" name="total" id="total" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="abono">Abono:</label>
+									<input type="text" name="abono" id="abono" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="resta">Restante:</label>
+									<input type="text" name="resta" id="resta" class="form-control">
+								</div>	
 							</div>
 						</div>
 						<div class="row">
