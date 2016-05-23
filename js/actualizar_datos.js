@@ -37,21 +37,21 @@ $('#actualizar').click(function(){
     total = parseInt(total);
     var abono = $('#abono').val();
     abono = parseInt(abono);
-    var resta = $('#resta').val();
-    resta = parseInt(resta);
+    var restante = $('#resta').val();
+    restante = parseInt(restante);
     var ajaxUrl = 'actualizar_ordenes.php';
-    console.log(resta);
+    
     
     data = {'orden': norden, 'tec': idTect, 'mem': memoria, 'sim': chip, 'back': tapa,
-            'fall': falla, 'observ': observacion, 'stat': status, 'fecha':fecha, 'total':total, 'abono':abono, 'resta':resta};
-    console.log(data);
+            'fall': falla, 'observ': observacion, 'stat': status, 'fecha':fecha, 'total':total, 'abono':abono, 'restante':restante};
+ 
     $.post(ajaxUrl, data, function (response) {
         if(response.empty){
             alert("Datos NO actualizados!");   
         }
         else{
-            alert("Datos Actualizados! ");
-            //location.reload();
+            alert("Datos Actualizados! " + data);
+            location.reload();
         }
     })
 });

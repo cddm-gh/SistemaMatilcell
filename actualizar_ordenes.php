@@ -20,13 +20,13 @@ if(isset($_POST['tec']) and isset($_POST['mem']) and isset($_POST['sim'])
     $fecha = $_POST['fecha'];
     $total = $_POST['total'];
     $abono = $_POST['abono'];
-    $resta = $_POST['resta'];
+    $restante = $_POST['restante'];
     
     require dirname(__FILE__).'/db/connect.php';
     $statement = $conexion->prepare('UPDATE ordenes SET id_tec = :tecnico, memoria = :memoria, 
                                     chip = :chip, tapa = :tapa, falla = :falla, 
                                     observaciones = :observacion, status = :status,
-                                    fecha = :fecha, costo = :total, abono = :abono, resta = :resta WHERE n_orden = :orden');
+                                    fecha = :fecha, costo = :total, abono = :abono, resta = :restante WHERE n_orden = :orden');
     $statement->execute(array(
         ':tecnico' => $tecnico,
         ':memoria' => $memoria,
@@ -38,7 +38,7 @@ if(isset($_POST['tec']) and isset($_POST['mem']) and isset($_POST['sim'])
         ':fecha' => $fecha,
         ':total' => $total,
         ':abono' => $abono,
-        ':resta' => resta,
+        ':restante' => $restante,
         ':orden' => $norden
     ));
 
