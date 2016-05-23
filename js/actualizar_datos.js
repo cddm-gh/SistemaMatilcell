@@ -32,10 +32,15 @@ $('#actualizar').click(function(){
     var falla = $('#falla').val();
     var observacion = $('#observacion').val();
     var status = $('#estado').val();
+    var fecha = $('#fecha').val();
+    var total = $('#total').val();
+    var abono = $('#abono').val();
+    var resta = $('#resta').val();
     var ajaxUrl = 'actualizar_ordenes.php';
     
     data = {'orden': norden, 'tec': idTect, 'mem': memoria, 'sim': chip, 'back': tapa,
-            'fail': falla, 'observ': observacion, 'stat': status};
+            'fall': falla, 'observ': observacion, 'stat': status, 'fecha':fecha, 'total':total, 'abono':abono, 'resta':resta};
+    console.log(data);
     $.post(ajaxUrl, data, function (response) {
         if(response.empty)
             alert("Datos NO actualizados!");

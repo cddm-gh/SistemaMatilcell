@@ -62,7 +62,6 @@ function clickEnTabla(id_elemento){
 		row.className = row.className === "highlighted" ? "" : "highlighted";
 		ishigh = row;
 		//enviar la fila que se ha clickeado
-        console.log('Hola consola');
 		llenarCampos(row, id_elemento);
 	}
 	//Una vez clickeada una fila se puede mover con las flechas para ir seleccionando
@@ -132,7 +131,6 @@ function clickEnTabla(id_elemento){
             el('abono').value = row.cells[12].innerHTML;
             el('resta').value = row.cells[13].innerHTML;
             
-            console.log("celda " + row.cells[9].innerHTML);
             
 	        if(row.cells[9].innerHTML === "recibido"){
                 $('#estado option:contains("Recibido")').attr("selected",true);
@@ -151,7 +149,6 @@ function clickEnTabla(id_elemento){
     		el('cedula').value = row.cells[0].innerHTML;
 	        el('nombre').value = row.cells[1].innerHTML;
 	        el('telefono').value = row.cells[2].innerHTML;
-            console.log("hola consola clientes");
     	} else{
     		console.log("No existe ese elemento.");
     	}
