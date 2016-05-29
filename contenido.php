@@ -16,27 +16,37 @@ if(!isset($_SESSION['usuario'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Sistema de Ordenes Mundo Matilcell</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
 </head>
 <body>
 	
 	<div class="contenedor">
 		<h1 class="titulo">Panel de control del sistema</h1>
-		<h2>Bienvenido <?php echo $nombre['nombre']; ?></h2>
-		<a href="cerrar.php">Cerrar Sesion</a>
+		<h2>Bienvenido <- <?php echo $nombre['nombre']; ?> -> </h2>
+		<a href="cerrar.php"><span class="label label-danger">Cerrar Sesión <span class="glyphicon glyphicon-off"></span></span></a>
 		<hr>
 		<div class="contenido">
-			<a href="orden.php" target="blank">Crear Nueva Orden</a><br>
-			<a href="consultar.php" target="blank">Consultar Ordenes</a><br>
-			<a href="clientes.php" target="blank">Consultar Clientes</a><br>
+			<div class="col-md-4">
+				<ul class="nav nav-pills nav-stacked text-center">
+					<li role="presentation" class="list-group-item list-group-item-info"><a href="orden.php" target="blank">CREAR ORDEN
+						<span class="glyphicon glyphicon-file"></span></a></li>
+					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_ordenes.php" target="_blank">CONSULTAR ORDENES
+						<span class="glyphicon glyphicon-search"></span></a></li>
+					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_clientes.php" target="_blank">CONSULTAR CLIENTES
+						<span class="glyphicon glyphicon-search"></span></a></li>
+					<li role="presentation" class="list-group-item list-group-item-warning"><a href="administracion.php" target="_blank">AREA ADMINISTRATIVA DEL SISTEMA
+						<span class="glyphicon glyphicon-cog"></span></a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-
+	
 	<script src="js/jquery-1.12.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>

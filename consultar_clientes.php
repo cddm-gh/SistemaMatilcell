@@ -11,13 +11,14 @@ if(!isset($_SESSION['usuario'])){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Clientes</title>
+	<title>Consulta de Clientes</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+	<!-- <link rel="stylesheet" href="css/dataTables.min.css"> -->
 	<link rel="stylesheet" href="css/estilos.css">
 	
 </head>
@@ -28,9 +29,9 @@ if(!isset($_SESSION['usuario'])){
 		<table class="table table-bordered display" id="tabla_clientes" onclick="clickEnTabla('tabla_clientes');">
 			<thead>
 				<tr class="success">
-					<th>Cedula</th>
+					<th>Cédula</th>
 					<th>Nombre</th>
-					<th>Telefono</th>
+					<th>Teléfono</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,7 +49,7 @@ if(!isset($_SESSION['usuario'])){
 				<form action="" method="POST" id="orden">
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="cedula">Cedula</label>
+							<label for="cedula">Cédula</label>
 							<input type="text" name="cedula" id="cedula" class="form-control" readonly>
 						</div>
 					</div>
@@ -60,7 +61,7 @@ if(!isset($_SESSION['usuario'])){
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="telefono">Telefono</label>
+							<label for="telefono">Teléfono</label>
 							<input type="text" name="telefono" id="telefono" class="form-control">
 						</div>
 					</div>
@@ -70,13 +71,16 @@ if(!isset($_SESSION['usuario'])){
 
 		<div class="row">
 			<div class="col-md-6 col-md-offset-5">
-				<button class="btn btn-info" id="btn_actualizar">Actualizar Datos</button>
+				<button class="btn btn-info" id="btn_actualizar">Actualizar Datos
+					<span class="glyphicon glyphicon-refresh"></span>
+				</button>
 			</div>
 		</div>
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	<!--<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>-->
+	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
 	<script type="text/javascript" src="js/actualizar_datos.js"></script>

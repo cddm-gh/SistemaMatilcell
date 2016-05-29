@@ -22,14 +22,14 @@ if(!isset($_SESSION['usuario'])){
 
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<br>
 			<div class="row">
-				<table class="table table-bordered display" id="tabla_ordenes" onclick="clickEnTabla('tabla_ordenes');">
+				<table class="table table-bordered table-condensed" id="tabla_ordenes" onclick="clickEnTabla('tabla_ordenes');">
 					<thead>
-						<tr class="success">
+						<tr class="info">
 							<th>Orden #</th>
-							<th>Cedula</th>
+							<th>Cédula</th>
 							<th>Serial</th>
 							<th>ID Tecnico</th>
 							<th>Memoria</th>
@@ -38,6 +38,10 @@ if(!isset($_SESSION['usuario'])){
 							<th>Falla</th>
 							<th>Observacion</th>
 							<th>Status</th>
+							<th>Fecha</th>
+							<th>Total</th>
+							<th>Abono</th>
+							<th>Restante</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -53,6 +57,10 @@ if(!isset($_SESSION['usuario'])){
 								<td><?php echo $row[7]; ?></td>
 								<td><?php echo $row[8]; ?></td>
 								<td><?php echo $row[9]; ?></td>
+								<td><?php echo $row[10]; ?></td>
+								<td><?php echo $row[11]; ?></td>
+								<td><?php echo $row[12]; ?></td>
+								<td><?php echo $row[13]; ?></td>
 							</tr>
 						<?php endwhile; ?>
 					</tbody>
@@ -61,7 +69,7 @@ if(!isset($_SESSION['usuario'])){
 			<div class="row">
 				<div class="col-md-12">
 				<!-- Agregar formulario para al dar click en una fila de la tabla mostrar los datos y poder editar -->
-					<form action="" mathod="POST" id="orden">
+					<form action="" method="POST" id="orden">
 						<div class="col-md-2">
 							<div class="form-group">
 								<label for="norden">Orden #</label>
@@ -70,7 +78,7 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="cedula">Cedula</label>
+								<label for="cedula">Cédula</label>
 								<input type="text" name="cedula" id="cedula" class="form-control" readonly>
 							</div>
 						</div>
@@ -113,7 +121,7 @@ if(!isset($_SESSION['usuario'])){
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label for="observacion">Observacion:</label>
+									<label for="observacion">Observación:</label>
 									<textarea name="observacion" id="observacion" class="form-control"></textarea>
 								</div>
 							</div>
@@ -128,8 +136,37 @@ if(!isset($_SESSION['usuario'])){
 							</div>
 						</div>
 						<div class="row">
+							
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="fecha">Fecha:</label>
+									<input type="text" name="fecha" id="fecha" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="total">Total:</label>
+									<input type="number" min="0" name="total" id="total" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="abono">Abono:</label>
+									<input type="number" min="0" name="abono" id="abono" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="resta">Restante:</label>
+									<input type="text" name="resta" id="resta" class="form-control" readonly>
+								</div>	
+							</div>
+						</div>
+						<div class="row">
 							<div class="col-md-6 col-md-offset-5">
-								<button class="btn btn-info" id="actualizar">Actualizar Datos</button>
+								<button class="btn btn-info" id="actualizar">Actualizar Datos
+									<span class="glyphicon glyphicon-refresh"></span>
+								</button>
 							</div>
 						</div>
 					</form>
@@ -139,9 +176,11 @@ if(!isset($_SESSION['usuario'])){
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script> -->
+	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
 	<script type="text/javascript" src="js/actualizar_datos.js"></script>
 </body>
 </html>
+

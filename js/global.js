@@ -25,6 +25,19 @@ $(document).ready(function($){
 	$('#cedula').mask("99999999");
 	$('#telefono').mask("9999-9999999");
 	$('#serial').mask("999999999999999");
+	//colocando el plugin 
+	var date_input=$('input[name="fecha"]'); //el input con nombre "fecha" del formulario ordenes
+    //var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    
+	date_input.datepicker({
+        format: "dd/mm/yyyy",
+        weekStart: 1,
+        language: "es",
+        daysOfWeekDisabled: "0",
+        daysOfWeekHighlighted: "0",
+        autoclose: true,
+        todayHighlight: true
+    });
 });
 
 //Funcion para al salir del input cedula busca en la BD por esa cedula
