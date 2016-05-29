@@ -94,7 +94,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				if( $errores !== ""){
 					echo '<div class="alert alert-danger">'; 
 					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
-					echo $errores; 
+					echo " " . $errores; 
 					echo '</div>';
 				}
 			?>
