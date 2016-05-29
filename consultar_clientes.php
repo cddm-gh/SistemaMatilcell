@@ -71,7 +71,9 @@ if(!isset($_SESSION['usuario'])){
 
 		<div class="row">
 			<div class="col-md-6 col-md-offset-5">
-				<button class="btn btn-info" id="btn_actualizar">Actualizar Datos</button>
+				<button class="btn btn-info" id="btn_actualizar">Actualizar Datos
+					<span class="glyphicon glyphicon-refresh"></span>
+				</button>
 			</div>
 		</div>
 	</div>

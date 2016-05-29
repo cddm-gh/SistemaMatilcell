@@ -68,15 +68,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  
 							class="navbar-form navbar-right" method="POST" name="login">
 								
-							<div class="form-group">
+							<div class="form-group has-feedback">
 								<label class="control-label" for="usuario"></label>
 								<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
+								<i class="glyphicon glyphicon-user form-control-feedback"></i>
 							</div>
-							<div class="form-group">
+							<div class="form-group has-feedback">
 								<label class="control-label" for="usuario"></label>
 								<input type="password" name="password" class="form-control" id="password" placeholder="Password">
+								<i class="glyphicon glyphicon-lock form-control-feedback"></i>
 							</div>
-							<input type="submit" class="btn btn-success" value="Entrar">
+							<button type="submit" class="btn btn-success" value="entrar">Entrar
+								<span class="glyphicon glyphicon-log-in"></span>
+							</button>
 						</form>
 				
 					</div>

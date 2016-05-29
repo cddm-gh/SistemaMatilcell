@@ -146,25 +146,27 @@ if(!isset($_SESSION['usuario'])){
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="total">Total:</label>
-									<input type="text" name="total" id="total" class="form-control">
+									<input type="number" min="0" name="total" id="total" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="abono">Abono:</label>
-									<input type="text" name="abono" id="abono" class="form-control">
+									<input type="number" min="0" name="abono" id="abono" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="resta">Restante:</label>
-									<input type="text" name="resta" id="resta" class="form-control">
+									<input type="text" name="resta" id="resta" class="form-control" readonly>
 								</div>	
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-5">
-								<button class="btn btn-info" id="actualizar">Actualizar Datos</button>
+								<button class="btn btn-info" id="actualizar">Actualizar Datos
+									<span class="glyphicon glyphicon-refresh"></span>
+								</button>
 							</div>
 						</div>
 					</form>

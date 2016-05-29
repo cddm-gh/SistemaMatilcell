@@ -32,43 +32,49 @@ if(!isset($_SESSION['usuario'])){
 
 				<form action="validar_orden.php" method="POST" name="orden">
 					<div class="col-md-3">
-						<div class="form-group">
+						<div class="form-group has-feedback">
 							<label for="cedula">Cédula:</label>
 							
-							<input type="text" class="form-control" id="cedula" name="cedula" placeholder="Numero De Cedula" required="true"
-								autofocus="true" maxlength="9">							
+							<input type="text" class="form-control input-principal" id="cedula" name="cedula" placeholder="Numero De Cedula" required="true"
+								autofocus="true" maxlength="9">	
+							<i class="glyphicon glyphicon-user form-control-feedback"></i>						
 						</div>
 
-						<div class="form-group">
+						<div class="form-group has-feedback">
 							<label for="nombre">Nombre:</label>
 							<input type="text" class="form-control textoMayuscula" id="nombre" name="nombre" placeholder="Nombre del cliente"
 								required="true" maxlength="45">
+							<i class="glyphicon glyphicon-font form-control-feedback"></i>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group has-feedback">
 							<label for="telefono">Teléfono:</label>
 							<input type="text" class="form-control "id="telefono" name="telefono" placeholder="Numero De telefono"
 								required="true" maxlength="12">
+							<i class="glyphicon glyphicon-earphone form-control-feedback"></i>
 						</div>
 						<hr>
 					</div>
 					<div class="col-md-3">
-						<div class="form-group">
+						<div class="form-group has-feedback">
 							<label for="serial">Serial:</label>
-							<input type="text" class="form-control "id="serial" name="serial" placeholder="Serial Del equipo"
+							<input type="text" class="form-control input-principal"id="serial" name="serial" placeholder="Serial Del equipo"
 								required="true" maxlength="15">
+							<i class="glyphicon glyphicon-barcode form-control-feedback"></i>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group has-feedback">
 							<label for="serial">Marca:</label>
 							<input type="text" class="form-control textoMayuscula" id="marca" name="marca" placeholder="Marca del equipo"
 								required="true" maxlength="20">
+							<i class="glyphicon glyphicon-list-alt form-control-feedback"></i>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group has-feedback">
 							<label for="serial">Modelo:</label>
 							<input type="text" class="form-control textoMayuscula" id="modelo" name="modelo" placeholder="Modelo del equipo"
 								required="true" maxlength="25">
+							<i class="glyphicon glyphicon-tag form-control-feedback"></i>
 						</div>
 						<hr>
 					</div>
@@ -116,13 +122,15 @@ if(!isset($_SESSION['usuario'])){
 					<div class="col-md-2">
 						<label>Total:</label><br>
 						<div class="form-group">
-							<input type="number" class="form-control" name="total" id="total" placeholder="Cantidad a pagar">
+							<input type="number" class="form-control" name="total" id="total" placeholder="Cantidad a pagar" required="true"
+								min="200" step="50">
 						</div>
 						<div class="form-group">
-							<input type="number" class="form-control" name="abono" id="abono" placeholder="Cantidad abonada">
+							<input type="number" class="form-control" name="abono" id="abono" placeholder="Cantidad abonada"
+								min="0">
 						</div>
 						<div class="form-group">
-							<input type="number" class="form-control" name="resta" id="resta" placeholder="Cantidad restante" readonly>
+							<input type="text" class="form-control" name="resta" id="resta" placeholder="Cantidad restante" readonly>
 						</div>
 						
 						<div class="control-group">
@@ -141,8 +149,12 @@ if(!isset($_SESSION['usuario'])){
 
 					<div class="row">
 						<div class="col-md-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-2">
-							<input type="submit" class="btn btn-success btn-lg" name="crear" value="Crear Orden">
-							<input type="reset" class="btn btn-primary btn-lg" value="Limpiar Formulario"><br>
+							<button type="submit" class="btn btn-success btn-lg" name="crear" id="crear">Crear Orden 
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="reset" class="btn btn-primary btn-lg" value="limpiar">Limpiar Campos
+								<span class="glyphicon glyphicon-erase"></span>
+							</button>
 						</div>
 					</div>
 					<div id="escondido" >

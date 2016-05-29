@@ -33,15 +33,15 @@ if(!isset($_SESSION['usuario'])){
 		<hr>
 		<div class="contenido">
 			<div class="col-md-4">
-				<ul class="nav nav-pills nav-stacked">
-					<li role="presentation"><a href="orden.php" target="blank"><span class="label label-primary">CREAR ORDEN
-						<span class="glyphicon glyphicon-file"></span></span></a></li>
-					<li role="presentation"><a href="consultar_ordenes.php" target="_blank"><span class="label label-success">CONSULTAR ORDENES
-						<span class="glyphicon glyphicon-search"></span></span></a></li>
-					<li role="presentation"><a href="consultar_clientes.php" target="_blank"><span class="label label-success">CONSULTAR CLIENTES
-						<span class="glyphicon glyphicon-search"></span></span></a></li>
-					<li role="presentation"><a href="administracion.php" target="_blank"><span class="label label-warning">AREA ADMINISTRATIVA DEL SISTEMA
-						<span class="glyphicon glyphicon-cog"></span></span></a></li>
+				<ul class="nav nav-pills nav-stacked text-center">
+					<li role="presentation" class="list-group-item list-group-item-info"><a href="orden.php" target="blank">CREAR ORDEN
+						<span class="glyphicon glyphicon-file"></span></a></li>
+					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_ordenes.php" target="_blank">CONSULTAR ORDENES
+						<span class="glyphicon glyphicon-search"></span></a></li>
+					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_clientes.php" target="_blank">CONSULTAR CLIENTES
+						<span class="glyphicon glyphicon-search"></span></a></li>
+					<li role="presentation" class="list-group-item list-group-item-warning"><a href="administracion.php" target="_blank">AREA ADMINISTRATIVA DEL SISTEMA
+						<span class="glyphicon glyphicon-cog"></span></a></li>
 				</ul>
 			</div>
 		</div>
