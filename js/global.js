@@ -28,13 +28,16 @@ $(document).ready(function($){
 	//colocando el plugin 
 	var date_input=$('input[name="fecha"]'); //el input con nombre "fecha" del formulario ordenes
     //var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-    var options={
-        format: 'dd/mm/yyyy',
-        //container: container,
-        todayHighlight: true,
+    
+	date_input.datepicker({
+        format: "dd/mm/yyyy",
+        weekStart: 1,
+        language: "es",
+        daysOfWeekDisabled: "0",
+        daysOfWeekHighlighted: "0",
         autoclose: true,
-    };
-    date_input.datepicker(options); //inicializar el plugin
+        todayHighlight: true
+    });
 });
 
 //Funcion para al salir del input cedula busca en la BD por esa cedula

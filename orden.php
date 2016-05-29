@@ -162,11 +162,14 @@ if(!isset($_SESSION['usuario'])){
 	</div>
 	
 
-	<!-- Para al salir del campo cedula buscar en la base de datos si ya tiene registrado el cliente -->
-		<script src="js/jquery-1.12.2.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/bootstrap-datepicker.js"></script>
-		<script src="js/jquery.maskedinput.js"></script>
-		<script src="js/global.js"></script>
+	<script src="js/jquery-1.12.2.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Plugins para controlar las fechas -->
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-datepicker.es.min.js" charset="UTF-8"></script>
+	<!--Plugin para enmascarar los inputs-->
+	<script src="js/jquery.maskedinput.js"></script>
+	<!-- Script para iniciar los plugins que se usan al cargar las pagina -->
+	<script src="js/global.js"></script>	
 </body>
 </html>

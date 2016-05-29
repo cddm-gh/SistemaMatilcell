@@ -21,11 +21,15 @@ if(isset($_POST['crear'])){
 	$falla = trim($_POST['falla']);
 	$observacion = trim($_POST['observacion']);
 	$status = trim($_POST['status']);
+	$fecha = trim($_POST['fecha']);
+	$costo = trim($_POST['total']);
+	$abono = trim($_POST['abono']);
+	$resta = trim($_POST['resta']);
 	$cliente_enc = $_POST['cliente_enc'];
 	$equipo_enc = $_POST['equipo_enc'];
 	//Validar que las variables no esten vacias
 	if(empty($cedula) or empty($nombre) or empty($telefono) or empty($serial) or empty($marca) or empty($modelo)
-		or empty($falla) or empty($memoria) or empty($tapa) or empty($chip)){
+		or empty($falla) or empty($memoria) or empty($tapa) or empty($chip) or empty($costo)){
 		echo "<h1>Error no puede dejar campos vacios!</h1><br>";
 		header('Location: orden.php');
 	}else{
@@ -53,7 +57,7 @@ if(isset($_POST['crear'])){
 		try{
 
 			$statement = $conexion->prepare('INSERT INTO ordenes VALUES (0,:cedula,:serial_eq,:id_tec,:memoria,:chip,:tapa,:falla,
-				:observacion,:status)');
+				:observacion,:status,:fecha,:costo,:abono,:resta)');
 			$statement->execute(array(
 				':cedula' => $cedula,
 				':serial_eq' => $serial,
@@ -63,12 +67,16 @@ if(isset($_POST['crear'])){
 				':tapa' => $tapa,
 				':falla' => $falla,
 				':observacion' => $observacion,
-				':status' => $status
+				':status' => $status,
+				':fecha' => $fecha,
+				':costo' => $costo,
+				':abono' => $abono,
+				':resta' => $resta
 				)
 			);
 
 		}catch(PDOException $e){
-			echo "<h2> No se pudo crear la orden " . $e->getMessage();
+			echo "<h2> No se pudo crear la orden " . $e->getMessage() . "</h2>";
 		}
 
 	}
