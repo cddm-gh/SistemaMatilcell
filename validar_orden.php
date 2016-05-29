@@ -86,14 +86,14 @@ if(isset($_POST['crear'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Validacion de la Orden</title>
+	<title>Validación de la Orden</title>
 </head>
 <body>
 	
-	<p><h1>Orden creada con exito!</h1></p>
+	<p><h1>Orden creada con éxito!</h1></p>
 	<script>
 	window.setTimeout(function() {
 		window.location = 'orden.php';

@@ -16,27 +16,37 @@ if(!isset($_SESSION['usuario'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Sistema de Ordenes Mundo Matilcell</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	
 </head>
 <body>
 	
 	<div class="contenedor">
 		<h1 class="titulo">Panel de control del sistema</h1>
 		<h2>Bienvenido <?php echo $nombre['nombre']; ?></h2>
-		<a href="cerrar.php">Cerrar Sesion</a>
+		<a href="cerrar.php"><span class="label label-danger">Cerrar Sesión <span class="glyphicon glyphicon-off"></span></span></a>
 		<hr>
 		<div class="contenido">
-			<a href="orden.php" target="blank">Crear Nueva Orden</a><br>
-			<a href="consultar_ordenes.php" target="_blank">Consultar Ordenes</a><br>
-			<a href="consultar_clientes.php" target="_blank">Consultar Clientes</a><br>
+			<div class="col-md-4">
+				<ul class="nav nav-pills nav-stacked">
+					<li role="presentation"><a href="orden.php" target="blank"><span class="label label-primary">CREAR ORDEN
+						<span class="glyphicon glyphicon-file"></span></span></a></li>
+					<li role="presentation"><a href="consultar_ordenes.php" target="_blank"><span class="label label-success">CONSULTAR ORDENES
+						<span class="glyphicon glyphicon-search"></span></span></a></li>
+					<li role="presentation"><a href="consultar_clientes.php" target="_blank"><span class="label label-success">CONSULTAR CLIENTES
+						<span class="glyphicon glyphicon-search"></span></span></a></li>
+					<li role="presentation"><a href="administracion.php" target="_blank"><span class="label label-warning">AREA ADMINISTRATIVA DEL SISTEMA
+						<span class="glyphicon glyphicon-cog"></span></span></a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-
+	
 	<script src="js/jquery-1.12.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 </body>

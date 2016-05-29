@@ -15,7 +15,7 @@ if(!isset($_SESSION['usuario'])){
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Creacion de Ordenes</title>
+	<title>Creación de Ordenes</title>
 	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
@@ -33,7 +33,7 @@ if(!isset($_SESSION['usuario'])){
 				<form action="validar_orden.php" method="POST" name="orden">
 					<div class="col-md-3">
 						<div class="form-group">
-							<label for="cedula">Cedula:</label>
+							<label for="cedula">Cédula:</label>
 							
 							<input type="text" class="form-control" id="cedula" name="cedula" placeholder="Numero De Cedula" required="true"
 								autofocus="true" maxlength="9">							
@@ -46,7 +46,7 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 
 						<div class="form-group">
-							<label for="telefono">Telefono:</label>
+							<label for="telefono">Teléfono:</label>
 							<input type="text" class="form-control "id="telefono" name="telefono" placeholder="Numero De telefono"
 								required="true" maxlength="12">
 						</div>
@@ -98,7 +98,7 @@ if(!isset($_SESSION['usuario'])){
 						<br>
                             <label for="tecnicos">Reparar Con:</label>
 						<select name="tecnicos" class="form-control" id="tecnicos">
-							<option value="nada" selected="true" disabled="true">-- Tecnicos</option>
+							<option value="nada" selected="true" disabled="true">-- Técnicos</option>
 							<?php
 								while($row = $statement->fetch()){
 									echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
@@ -106,7 +106,7 @@ if(!isset($_SESSION['usuario'])){
 							?>
 						</select><br>
 
-						<label>Observacion(es)</label><br>
+						<label>Observación</label><br>
 						<textarea name="observacion" class="form-control textoMayuscula" id="observacion" name="observacion" rows="5" cols="25"
 							wrap="soft" maxlength="80" maxlength="80"></textarea>
 						</div>

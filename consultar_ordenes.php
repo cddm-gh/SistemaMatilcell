@@ -29,7 +29,7 @@ if(!isset($_SESSION['usuario'])){
 					<thead>
 						<tr class="info">
 							<th>Orden #</th>
-							<th>Cedula</th>
+							<th>Cédula</th>
 							<th>Serial</th>
 							<th>ID Tecnico</th>
 							<th>Memoria</th>
@@ -78,7 +78,7 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<label for="cedula">Cedula</label>
+								<label for="cedula">Cédula</label>
 								<input type="text" name="cedula" id="cedula" class="form-control" readonly>
 							</div>
 						</div>
@@ -121,7 +121,7 @@ if(!isset($_SESSION['usuario'])){
 							</div>
 							<div class="col-md-4">
 								<div class="form-group">
-									<label for="observacion">Observacion:</label>
+									<label for="observacion">Observación:</label>
 									<textarea name="observacion" id="observacion" class="form-control"></textarea>
 								</div>
 							</div>
@@ -174,7 +174,8 @@ if(!isset($_SESSION['usuario'])){
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script> -->
+	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
 	<script type="text/javascript" src="js/actualizar_datos.js"></script>
