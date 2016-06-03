@@ -70,12 +70,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 								
 							<div class="form-group has-feedback">
 								<label class="control-label" for="usuario"></label>
-								<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario">
+								<input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" maxlenght="10">
 								<i class="glyphicon glyphicon-user form-control-feedback"></i>
 							</div>
 							<div class="form-group has-feedback">
 								<label class="control-label" for="usuario"></label>
-								<input type="password" name="password" class="form-control" id="password" placeholder="Password">
+								<input type="password" name="password" class="form-control" id="password" placeholder="Password" maxlenght="10">
 								<i class="glyphicon glyphicon-lock form-control-feedback"></i>
 							</div>
 							<button type="submit" class="btn btn-success" value="entrar">Entrar

@@ -25,6 +25,7 @@ if(isset($_POST['crear'])){
 	$costo = trim($_POST['total']);
 	$abono = trim($_POST['abono']);
 	$resta = trim($_POST['resta']);
+	$tipo_pago = $_POST['pagos'];
 	$cliente_enc = $_POST['cliente_enc'];
 	$equipo_enc = $_POST['equipo_enc'];
 	//Validar que las variables no esten vacias
@@ -53,27 +54,46 @@ if(isset($_POST['crear'])){
 				':modelo' => $modelo
 			));
 		}
+		$st = $conexion->prepare('INSERT INTO caracteristicas VALUES (0,:serial_eq,:chip,:memoria,:tapa,:falla,:observacion)');
+		$st->execute(array(
+			':serial_eq' => $serial,
+			':chip' => $chip,
+			':memoria' => $memoria,
+			':tapa' => $tapa,
+			':falla' => $falla,
+			':observacion' => $observacion
+		));
+		$id_caracteristicas = $conexion->lastInsertId();
+		
+		$st = $conexion->prepare('INSERT INTO pagos VALUES (0,:total,:abono,:restante,:tipo)');
+		$st->execute(array(
+			':total' => $costo,
+			':abono' => $abono,
+			':restante' => $resta,
+			':tipo' => $tipo_pago
+		));
+		$id_pago = $conexion->lastInsertId();
 
 		try{
 
-			$statement = $conexion->prepare('INSERT INTO ordenes VALUES (0,:cedula,:serial_eq,:id_tec,:memoria,:chip,:tapa,:falla,
-				:observacion,:status,:fecha,:costo,:abono,:resta)');
+			$statement = $conexion->prepare('INSERT INTO ordenes VALUES (0,:cedula,:serial_eq,:id_car,:id_tec,:id_pago,:fecha)');
 			$statement->execute(array(
 				':cedula' => $cedula,
 				':serial_eq' => $serial,
+				':id_car' => $id_caracteristicas, //regresa el ID de las ultimas caracteristicas agregadas
 				':id_tec' => $id_tec,
-				':memoria' => $memoria,
-				':chip' => $chip,
-				':tapa' => $tapa,
-				':falla' => $falla,
-				':observacion' => $observacion,
-				':status' => $status,
-				':fecha' => $fecha,
-				':costo' => $costo,
-				':abono' => $abono,
-				':resta' => $resta
+				':id_pago' => $id_pago,
+				':fecha' => $fecha
 				)
 			);
+			$ultima_orden = $conexion->lastInsertId();
+			$statement = $conexion->prepare('INSERT INTO reparaciones VALUES (0,:norden,:status,:fecha)');
+			$statement->execute(array(
+				':norden' => $ultima_orden,
+				':status' => "Recibido",
+				':fecha' => $fecha
+			));
+			
 
 		}catch(PDOException $e){
 			echo "<h2> No se pudo crear la orden " . $e->getMessage() . "</h2>";

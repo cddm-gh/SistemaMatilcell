@@ -43,7 +43,7 @@ if(!isset($_SESSION['usuario'])){
 						<div class="form-group has-feedback">
 							<label for="nombre">Nombre:</label>
 							<input type="text" class="form-control textoMayuscula" id="nombre" name="nombre" placeholder="Nombre del cliente"
-								required="true" maxlength="45">
+								required="true" maxlength="30">
 							<i class="glyphicon glyphicon-font form-control-feedback"></i>
 						</div>
 
@@ -73,7 +73,7 @@ if(!isset($_SESSION['usuario'])){
 						<div class="form-group has-feedback">
 							<label for="serial">Modelo:</label>
 							<input type="text" class="form-control textoMayuscula" id="modelo" name="modelo" placeholder="Modelo del equipo"
-								required="true" maxlength="25">
+								required="true" maxlength="20">
 							<i class="glyphicon glyphicon-tag form-control-feedback"></i>
 						</div>
 						<hr>
@@ -102,7 +102,7 @@ if(!isset($_SESSION['usuario'])){
 						<textarea name="falla" class="form-control textoMayuscula" id="falla" name="falla" rows="5" cols="25" required wrap="soft" maxlength="50"
 							maxlength="50"></textarea>
 						<br>
-                            <label for="tecnicos">Reparar Con:</label>
+                        <label for="tecnicos">Reparar Con:</label>
 						<select name="tecnicos" class="form-control" id="tecnicos">
 							<option value="nada" selected="true" disabled="true">-- Técnicos</option>
 							<?php
@@ -131,6 +131,16 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" name="resta" id="resta" placeholder="Cantidad restante" readonly>
+						</div>
+						<div class="form-group">
+							<select name="pagos" class="form-control" id="pagos">
+								<option value="nada" selected="true" disabled="true">-- Tipos de pago</option>
+								<option value="efectivo">Efectivo</option>
+								<option value="debito">Débito</option>
+								<option value="credito">Crédito</option>
+								<option value="cheque">Cheque</option>
+								<option value="transferencia">Transferencia</option>
+							</select>
 						</div>
 						
 						<div class="control-group">
