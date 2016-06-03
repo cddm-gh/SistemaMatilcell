@@ -116,32 +116,39 @@ function clickEnTabla(id_elemento){
     //asignar los dato del arreglo row a cada uno de los elementos del formulario por su ID
     function llenarCampos(row, id_elemento) {
     	if(id_elemento === "tabla_ordenes"){
+            console.log(row.cells);
 	        el('norden').value = row.cells[0].innerHTML;
 	        el('cedula').value = row.cells[1].innerHTML;
 	        el('serial').value = row.cells[2].innerHTML;
-	        el('id_tec').value = row.cells[3].innerHTML;
+	        el('chip').value = row.cells[3].innerHTML;
 	        el('memoria').value = row.cells[4].innerHTML;
-	        el('chip').value = row.cells[5].innerHTML;
-	        el('tapa').value = row.cells[6].innerHTML;
-	        el('falla').value = row.cells[7].innerHTML;
-	        el('observacion').value = row.cells[8].innerHTML;
-            el('estado').value = row.cells[9].innerHTML;
-            el('fecha').value = row.cells[10].innerHTML;
-            el('total').value = row.cells[11].innerHTML;
-            el('abono').value = row.cells[12].innerHTML;
-            el('resta').value = row.cells[13].innerHTML;
+	        el('tapa').value = row.cells[5].innerHTML;
+	        el('falla').value = row.cells[6].innerHTML;
+	        el('observacion').value = row.cells[7].innerHTML;
+	        el('id_tec').value = row.cells[8].innerHTML;
+            el('total').value = row.cells[9].innerHTML;
+            el('abono').value = row.cells[10].innerHTML;
+            el('resta').value = row.cells[11].innerHTML;
+            el('estado').value = row.cells[12].innerHTML;
+            el('fecha').value = row.cells[13].innerHTML;
             
             
-	        if(row.cells[9].innerHTML === "recibido"){
+	        if(row.cells[12].innerHTML === "Recibido"){
                 $('#estado option:contains("Recibido")').attr("selected",true);
             }
-            if(row.cells[9].innerHTML === "reparado"){
-                $('#estado option:contains("Reparado")').attr("selected",true);
+            if(row.cells[12].innerHTML === "No Reparado - Sin Entregar"){
+                $('#estado option:contains("No Reparado - Sin Entregar")').attr("selected",true);
             }
-            if(row.cells[9].innerHTML === "entregado"){
-                $('#estado option:contains("Entregado")').attr("selected",true);
+            if(row.cells[12].innerHTML === "No Reparado - Entregado"){
+                $('#estado option:contains("No Reparado - Entregado")').attr("selected",true);
             }
-            if(row.cells[9].innerHTML === ""){
+            if(row.cells[12].innerHTML === "Reparado - Sin Entregar"){
+                $('#estado option:contains("Reparado - Sin Entregar")').attr("selected",true);
+            }
+            if(row.cells[12].innerHTML === "Reparado - Entregado"){
+                $('#estado option:contains("Reparado - Entregado")').attr("selected",true);
+            }
+            if(row.cells[12].innerHTML === ""){
                 $('#estado option:contains("-- Estado")').attr("selected",true);
             }
 

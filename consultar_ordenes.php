@@ -5,7 +5,14 @@ if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
 }else{
 	require dirname(__FILE__).'/db/connect.php';
-	$statement = $conexion->prepare('SELECT * FROM ordenes');
+	$statement = $conexion->prepare('
+		SELECT o.numero,o.cedula_cli,o.serial_eq,c.chip,c.memoria,c.tapa,c.falla,c.observacion,t.id_tec,
+		p.total,p.abono,p.restante,r.status,r.fecha FROM ordenes o 
+		INNER JOIN caracteristicas c ON o.id_caract = c.id_caract
+		INNER JOIN tecnicos t ON o.id_tec = t.id_tec 
+		INNER JOIN pagos p ON o.id_pago = p.id_pago 
+		INNER JOIN reparaciones r ON o.numero = r.n_orden'
+	);
 	$statement->execute();
 }
 
@@ -31,17 +38,17 @@ if(!isset($_SESSION['usuario'])){
 							<th>Orden #</th>
 							<th>Cédula</th>
 							<th>Serial</th>
-							<th>ID Tecnico</th>
-							<th>Memoria</th>
-							<th>Chip</th>
-							<th>Tapa</th>
+							<th>CHIP</th>
+							<th>MEMORIAo</th>
+							<th>TAPA</th>
 							<th>Falla</th>
-							<th>Observacion</th>
-							<th>Status</th>
-							<th>Fecha</th>
+							<th>Observación</th>
+							<th>ID Técnico</th>
 							<th>Total</th>
 							<th>Abono</th>
 							<th>Restante</th>
+							<th>Status</th>
+							<th>Fecha</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -130,8 +137,10 @@ if(!isset($_SESSION['usuario'])){
 								<select name="estado" class="form-control" id="estado" name="estado">
 									<option value="nada" selected="true" disabled="true">-- Estado</option>
 									<option value="recibido" name="recibido">Recibido</option>
-									<option value="reparado" name="reparado">Reparado</option>
-									<option value="entregado" name="entregado">Entregado</option>
+									<option value="nreparadose" name="nreparadose">No Reparado - Sin Entregar</option>
+									<option value="nreparadoen" name="nreparadoen">No Reparado - Entregado</option>
+									<option value="reparadose" name="reparadose">Reparado - Sin Entregar</option>
+									<option value="reparadoen" name="reparadoen">Reparado - Entregado</option>
 								</select><br>	
 							</div>
 						</div>
