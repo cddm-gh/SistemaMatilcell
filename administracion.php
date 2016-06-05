@@ -10,7 +10,6 @@ $errores = "";
 
 if(isset($_POST['guardar'])){
     $nombre = $_POST['nombre'];
-    $telefono = $_POST['telefono'];
     $rol = $_POST['cargo'];
     $usuario = filter_var($_POST['usuario'], FILTER_SANITIZE_STRING);
     $password1 = $_POST['password1'];
@@ -24,13 +23,12 @@ if(isset($_POST['guardar'])){
         
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $statement = $conexion->prepare("INSERT INTO empleados VALUES (0,:nombre,:telefono,:rol,:usuario,:password)");
+            $statement = $conexion->prepare("INSERT INTO empleados VALUES (0,:nombre,:usuario,:password,:cargo)");
             $resultado = $statement->execute(array(
                 ':nombre' => $nombre,
-                ':telefono' => $telefono,
-                ':rol' => $rol,
                 ':usuario' => $usuario,
-                ':password' => $password1
+                ':password' => $password1,
+                ':cargo' => $rol
             ));
         
             if( $resultado )
@@ -107,12 +105,6 @@ if(isset($_POST['guardartec'])){
                         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre y Apellido del empleado" 
                             required="true" maxlength="45">
                         <i class="glyphicon glyphicon-font form-control-feedback"></i>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <label for="telefono">Teléfono Empleado</label>
-                        <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Número de contacto del empleado" 
-                            required="true" maxlength="12">
-                        <i class="glyphicon glyphicon-earphone form-control-feedback"></i>
                     </div>
                     <div class="form-group has-feedback">
                         <label for="telefono">Cargo Empleado</label>

@@ -12,7 +12,7 @@ try {
 	$dbuser = $config->get('db.user'); 
 	$dbpass = $config->get('db.password'); 
 		
-	$conexion = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+	$conexion = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES  \'UTF8\''));
 
 } catch (PDOException $e) {
 	echo "Error " . $e->getMessage();
