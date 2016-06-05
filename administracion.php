@@ -42,6 +42,32 @@ if(isset($_POST['guardar'])){
     }
 }
 
+if(isset($_POST['guardartec'])){
+    $nombretec = $_POST['nombretec'];
+    $cargotemp = $_POST['cargostecnicos'];
+    $cargo = "";
+    
+    if($cargotemp == "tecrep")
+        $cargo = "Técnico de Reparación";
+    
+    if($cargotemp == "tecsoft")
+        $cargo = "Técnico de Software";
+        
+   
+    require_once dirname(__FILE__).'/db/connect.php';
+        
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    try{
+        $statement = $conexion->prepare("INSERT INTO tecnicos VALUES (0,:nombre,:cargo)");
+        $resultado = $statement->execute(array(
+            ':nombre' => $nombretec,
+            ':cargo' => $cargo
+        )); 
+    }catch(PDOException $e){
+            $errores .= "Ocurrió un error al guardar el empleado - " . $e->getMessage();
+    }   
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -121,6 +147,26 @@ if(isset($_POST['guardar'])){
                             <span class="glyphicon glyphicon-erase"><span>
                         </button>
                     </div>
+                </div>
+            </form>
+            
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                <div class="col-md-4">
+                    <div class="form-group has-feedback">
+                        <label for="nombretec">Nombre del Técnico</label>
+                        <input type="text" class="form-control" name="nombretec" id="nombretec" maxlength="30" required="true">
+                        <i class="glyphicon glyphicon-font form-control-feedback"></i>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <select name="cargostecnicos" class="form-control" id="cargostecnicos">
+							<option value="nada" selected="true" disabled="true">-- Cargo del Técnico</option>
+							<option value="tecrep">Técnico de Reparación</option>
+							<option value="tecsoft">Técnico de Software</option>
+						</select>
+                    </div>
+                    <button type="submit" id="guardar" name="guardartec" class="btn btn-primary">Guardar Técnico
+                        <span class="glyphicon glyphicon-save"></span>
+                    </button>
                 </div>
             </form>
         </div>
