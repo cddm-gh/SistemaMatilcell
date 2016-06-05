@@ -39,7 +39,7 @@ if(!isset($_SESSION['usuario'])){
 							<th>Cédula</th>
 							<th>Serial</th>
 							<th>CHIP</th>
-							<th>MEMORIAo</th>
+							<th>MEMORIA</th>
 							<th>TAPA</th>
 							<th>Falla</th>
 							<th>Observación</th>
@@ -76,7 +76,7 @@ if(!isset($_SESSION['usuario'])){
 			<div class="row">
 				<div class="col-md-12">
 				<!-- Agregar formulario para al dar click en una fila de la tabla mostrar los datos y poder editar -->
-					<form action="" method="POST" id="orden">
+					<form action="actualizar_ordenes.php" method="POST" id="orden">
 						<div class="col-md-2">
 							<div class="form-group">
 								<label for="norden">Orden #</label>
@@ -137,10 +137,10 @@ if(!isset($_SESSION['usuario'])){
 								<select name="estado" class="form-control" id="estado" name="estado">
 									<option value="nada" selected="true" disabled="true">-- Estado</option>
 									<option value="recibido" name="recibido">Recibido</option>
-									<option value="nreparadose" name="nreparadose">No Reparado - Sin Entregar</option>
-									<option value="nreparadoen" name="nreparadoen">No Reparado - Entregado</option>
-									<option value="reparadose" name="reparadose">Reparado - Sin Entregar</option>
-									<option value="reparadoen" name="reparadoen">Reparado - Entregado</option>
+									<option value="No Reparado-Sin Entregar" name="nreparadose">No Reparado-Sin Entregar</option>
+									<option value="No Reparado-Entregado" name="nreparadoen">No Reparado-Entregado</option>
+									<option value="Reparado-Sin Entregar" name="reparadose">Reparado-Sin Entregar</option>
+									<option value="Reparado-Entregado" name="reparadoen">Reparado-Entregado</option>
 								</select><br>	
 							</div>
 						</div>
@@ -149,7 +149,7 @@ if(!isset($_SESSION['usuario'])){
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="fecha">Fecha:</label>
-									<input type="text" name="fecha" id="fecha" class="form-control">
+									<input type="text" name="fecha" id="fecha" class="form-control" placeholder="dd/mm/yyyy">
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -173,7 +173,7 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-5">
-								<button class="btn btn-info" id="actualizar">Actualizar Datos
+								<button type="submit" value="actualizar" class="btn btn-info" name="actualizar" id="actualizar">Actualizar Datos
 									<span class="glyphicon glyphicon-refresh"></span>
 								</button>
 							</div>

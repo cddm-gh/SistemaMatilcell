@@ -21,7 +21,7 @@ $('#btn_actualizar').click(function(){
     })
 });
 
-$('#actualizar').click(function(){
+/*$('#actualizar').click(function(){
     var norden = $('#norden').val();
     norden = parseInt(norden);
     var idTect = $('#id_tec').val();
@@ -37,21 +37,23 @@ $('#actualizar').click(function(){
     total = parseInt(total);
     var abono = $('#abono').val();
     abono = parseInt(abono);
-    var restante = $('#resta').val();
-    restante = parseInt(restante);
     var ajaxUrl = 'actualizar_ordenes.php';
     
     
     data = {'orden': norden, 'tec': idTect, 'mem': memoria, 'sim': chip, 'back': tapa,
-            'fall': falla, 'observ': observacion, 'stat': status, 'fecha':fecha, 'total':total, 'abono':abono, 'restante':restante};
- 
+            'fall': falla, 'observ': observacion, 'stat': status, 'fecha':fecha, 'total':total, 'abono':abono};
+    
+    console.log(data);
     $.post(ajaxUrl, data, function (response) {
+        console.log(data);
         if(response.empty){
-            alert("Datos NO actualizados!");   
+            alert("Datos NO actualizados!"); 
+            console.log(data);  
         }
         else{
-            alert("Datos Actualizados! " + data);
+            alert("Datos Actualizados!!");
             location.reload();
+            console.log(data);
         }
     })
-});
+});*/

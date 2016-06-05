@@ -83,6 +83,6 @@ if(!isset($_SESSION['usuario'])){
 	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
-	<script type="text/javascript" src="js/actualizar_datos.js"></script>
+	<!--<script type="text/javascript" src="js/actualizar_datos.js"></script>-->
 </body>
 </html>

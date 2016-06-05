@@ -9,17 +9,17 @@ if(!isset($_SESSION['usuario'])){
 if(isset($_POST['crear'])){
 	//Asignando las variables
 	$cedula = trim($_POST['cedula']);
-	$nombre = trim($_POST['nombre']);
+	$nombre = strtoupper(trim($_POST['nombre']));
 	$telefono = trim($_POST['telefono']);
 	$serial = trim($_POST['serial']);
-	$marca = trim($_POST['marca']);
-	$modelo = trim($_POST['modelo']);
-	$memoria = $_POST['memoria'];
-	$tapa = $_POST['tapa'];
-	$chip = $_POST['chip'];
+	$marca = strtoupper(trim($_POST['marca']));
+	$modelo = strtoupper(trim($_POST['modelo']));
+	$memoria = strtoupper($_POST['memoria']);
+	$tapa = strtoupper($_POST['tapa']);
+	$chip = strtoupper($_POST['chip']);
 	$id_tec = $_POST['tecnicos'];
-	$falla = trim($_POST['falla']);
-	$observacion = trim($_POST['observacion']);
+	$falla = strtoupper(trim($_POST['falla']));
+	$observacion = strtoupper(trim($_POST['observacion']));
 	$status = trim($_POST['status']);
 	$fecha = trim($_POST['fecha']);
 	$costo = trim($_POST['total']);

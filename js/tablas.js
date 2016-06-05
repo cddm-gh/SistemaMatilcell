@@ -64,7 +64,7 @@ function clickEnTabla(id_elemento){
 		//enviar la fila que se ha clickeado
 		llenarCampos(row, id_elemento);
 	}
-	//Una vez clickeada una fila se puede mover con las flechas para ir seleccionando
+	/*Una vez clickeada una fila se puede mover con las flechas para ir seleccionando
 	document.onkeydown = function (e) {
         e = e || event;
         var code = e.keyCode,
@@ -83,7 +83,7 @@ function clickEnTabla(id_elemento){
             }
             return GoTo(id_elemento, newhigh);
         }
-    }
+    }*/
 
     function GoTo(id, nu) {
         var obj = document.getElementById(id),
