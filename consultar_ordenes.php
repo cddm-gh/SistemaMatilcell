@@ -136,7 +136,7 @@ if(!isset($_SESSION['usuario'])){
 								<label for="estado">Estado del Equipo:</label>
 								<select name="estado" class="form-control" id="estado" name="estado">
 									<option value="nada" selected="true" disabled="true">-- Estado</option>
-									<option value="recibido" name="recibido">Recibido</option>
+									<option value="Recibido" name="recibido">Recibido</option>
 									<option value="No Reparado-Sin Entregar" name="nreparadose">No Reparado-Sin Entregar</option>
 									<option value="No Reparado-Entregado" name="nreparadoen">No Reparado-Entregado</option>
 									<option value="Reparado-Sin Entregar" name="reparadose">Reparado-Sin Entregar</option>
@@ -189,7 +189,7 @@ if(!isset($_SESSION['usuario'])){
 	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
-	<script type="text/javascript" src="js/actualizar_datos.js"></script>
+	<!--<script type="text/javascript" src="js/actualizar_datos.js"></script>-->
 </body>
 </html>
 

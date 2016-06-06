@@ -136,17 +136,17 @@ function clickEnTabla(id_elemento){
 	        if(row.cells[12].innerHTML === "Recibido"){
                 $('#estado option:contains("Recibido")').attr("selected",true);
             }
-            if(row.cells[12].innerHTML === "No Reparado - Sin Entregar"){
-                $('#estado option:contains("No Reparado - Sin Entregar")').attr("selected",true);
+            if(row.cells[12].innerHTML === "No Reparado-Sin Entregar"){
+                $('#estado option:contains("No Reparado-Sin Entregar")').attr("selected",true);
             }
-            if(row.cells[12].innerHTML === "No Reparado - Entregado"){
-                $('#estado option:contains("No Reparado - Entregado")').attr("selected",true);
+            if(row.cells[12].innerHTML === "No Reparado-Entregado"){
+                $('#estado option:contains("No Reparado-Entregado")').attr("selected",true);
             }
-            if(row.cells[12].innerHTML === "Reparado - Sin Entregar"){
-                $('#estado option:contains("Reparado - Sin Entregar")').attr("selected",true);
+            if(row.cells[12].innerHTML === "Reparado-Sin Entregar"){
+                $('#estado option:contains("Reparado-Sin Entregar")').attr("selected",true);
             }
-            if(row.cells[12].innerHTML === "Reparado - Entregado"){
-                $('#estado option:contains("Reparado - Entregado")').attr("selected",true);
+            if(row.cells[12].innerHTML === "Reparado-Entregado"){
+                $('#estado option:contains("Reparado-Entregado")').attr("selected",true);
             }
             if(row.cells[12].innerHTML === ""){
                 $('#estado option:contains("-- Estado")').attr("selected",true);

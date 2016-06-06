@@ -61,6 +61,9 @@ if(isset($_POST['guardartec'])){
             ':nombre' => $nombretec,
             ':cargo' => $cargo
         )); 
+        if( $resultado )
+            $msj .= "Técnico guardado con éxito en la base de datos.";
+        
     }catch(PDOException $e){
             $errores .= "Ocurrió un error al guardar el empleado - " . $e->getMessage();
     }   
