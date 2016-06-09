@@ -1,19 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gorydev
- * Date: 28/04/2016
- * Time: 09:44 PM
- */
- 
+
 if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
 }
 
-if(isset($_POST['actualizar'])){
+
         
-    $norden = trim($_POST['norden']);
-    $tecnico = trim($_POST['id_tec']);
+    $norden = $_POST['norden'];
+    $tecnico = $_POST['id_tec'];
     $memoria = trim($_POST['memoria']);
     $chip = trim($_POST['chip']);
     $tapa = trim($_POST['tapa']);
@@ -21,8 +15,8 @@ if(isset($_POST['actualizar'])){
     $observacion = trim($_POST['observacion']);
     $status = $_POST['estado'];
     $fecha = trim($_POST['fecha']);
-    $total = trim($_POST['total']);
-    $abono = trim($_POST['abono']);
+    $total = $_POST['total'];
+    $abono = $_POST['abono'];
     
     
     require dirname(__FILE__).'/db/connect.php';
@@ -54,10 +48,10 @@ if(isset($_POST['actualizar'])){
         echo 'Error al actualizar los datos: ' . $e->getMessage();
     }
     
-}
+
 
 ?>
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
@@ -72,4 +66,4 @@ if(isset($_POST['actualizar'])){
         }, 1000);
 	</script>
 </body>
-</html>
+</html>-->

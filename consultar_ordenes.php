@@ -76,7 +76,7 @@ if(!isset($_SESSION['usuario'])){
 			<div class="row">
 				<div class="col-md-12">
 				<!-- Agregar formulario para al dar click en una fila de la tabla mostrar los datos y poder editar -->
-					<form action="actualizar_ordenes.php" method="POST" id="orden">
+					<form action="" method="POST" id="orden">
 						<div class="col-md-2">
 							<div class="form-group">
 								<label for="norden">Orden #</label>
@@ -173,7 +173,7 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-5">
-								<button type="submit" value="actualizar" class="btn btn-info" name="actualizar" id="actualizar">Actualizar Datos
+								<button type="button" actualizar" class="btn btn-info" id="actualizar">Actualizar Datos
 									<span class="glyphicon glyphicon-refresh"></span>
 								</button>
 							</div>
@@ -189,7 +189,7 @@ if(!isset($_SESSION['usuario'])){
 	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
-	<!--<script type="text/javascript" src="js/actualizar_datos.js"></script>-->
+	<script type="text/javascript" src="js/actualizar_orden.js"></script>
 </body>
 </html>
 

@@ -116,7 +116,7 @@ function clickEnTabla(id_elemento){
     //asignar los dato del arreglo row a cada uno de los elementos del formulario por su ID
     function llenarCampos(row, id_elemento) {
     	if(id_elemento === "tabla_ordenes"){
-            console.log(row.cells);
+            //console.log(row.cells);
 	        el('norden').value = row.cells[0].innerHTML;
 	        el('cedula').value = row.cells[1].innerHTML;
 	        el('serial').value = row.cells[2].innerHTML;
