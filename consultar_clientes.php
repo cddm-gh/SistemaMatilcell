@@ -7,7 +7,7 @@ if(!isset($_SESSION['usuario'])){
 	require dirname(__FILE__).'/db/connect.php';
 	$statement = $conexion->prepare('SELECT * FROM clientes');
 	$statement->execute();
-
+	//TODO agregar todo aqui
 }
 ?>
 <!DOCTYPE html>
@@ -17,8 +17,8 @@ if(!isset($_SESSION['usuario'])){
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Consulta de Clientes</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-	<!-- <link rel="stylesheet" href="css/dataTables.min.css"> -->
+	<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">-->
+	<link rel="stylesheet" href="css/dataTables.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
 	
 </head>
@@ -83,6 +83,6 @@ if(!isset($_SESSION['usuario'])){
 	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
-	<script type="text/javascript" src="js/actualizar_datos.js"></script>
+	<script type="text/javascript" src="js/actualizar_cliente.js"></script>
 </body>
 </html>

@@ -5,7 +5,14 @@ if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
 }else{
 	require dirname(__FILE__).'/db/connect.php';
-	$statement = $conexion->prepare('SELECT * FROM ordenes');
+	$statement = $conexion->prepare('
+		SELECT o.numero,o.cedula_cli,o.serial_eq,c.chip,c.memoria,c.tapa,c.falla,c.observacion,t.id_tec,
+		p.total,p.abono,p.restante,r.status,r.fecha FROM ordenes o 
+		INNER JOIN caracteristicas c ON o.id_caract = c.id_caract
+		INNER JOIN tecnicos t ON o.id_tec = t.id_tec 
+		INNER JOIN pagos p ON o.id_pago = p.id_pago 
+		INNER JOIN reparaciones r ON o.numero = r.n_orden'
+	);
 	$statement->execute();
 }
 
@@ -17,7 +24,8 @@ if(!isset($_SESSION['usuario'])){
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Consulta de Ordenes</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">-->
+	<link rel="stylesheet" href="css/dataTables.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
 
 </head>
@@ -31,17 +39,17 @@ if(!isset($_SESSION['usuario'])){
 							<th>Orden #</th>
 							<th>Cédula</th>
 							<th>Serial</th>
-							<th>ID Tecnico</th>
-							<th>Memoria</th>
-							<th>Chip</th>
-							<th>Tapa</th>
+							<th>CHIP</th>
+							<th>MEMORIA</th>
+							<th>TAPA</th>
 							<th>Falla</th>
-							<th>Observacion</th>
-							<th>Status</th>
-							<th>Fecha</th>
+							<th>Observación</th>
+							<th>ID Técnico</th>
 							<th>Total</th>
 							<th>Abono</th>
 							<th>Restante</th>
+							<th>Status</th>
+							<th>Fecha</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -129,9 +137,11 @@ if(!isset($_SESSION['usuario'])){
 								<label for="estado">Estado del Equipo:</label>
 								<select name="estado" class="form-control" id="estado" name="estado">
 									<option value="nada" selected="true" disabled="true">-- Estado</option>
-									<option value="recibido" name="recibido">Recibido</option>
-									<option value="reparado" name="reparado">Reparado</option>
-									<option value="entregado" name="entregado">Entregado</option>
+									<option value="Recibido" name="recibido">Recibido</option>
+									<option value="No Reparado-Sin Entregar" name="nreparadose">No Reparado-Sin Entregar</option>
+									<option value="No Reparado-Entregado" name="nreparadoen">No Reparado-Entregado</option>
+									<option value="Reparado-Sin Entregar" name="reparadose">Reparado-Sin Entregar</option>
+									<option value="Reparado-Entregado" name="reparadoen">Reparado-Entregado</option>
 								</select><br>	
 							</div>
 						</div>
@@ -140,7 +150,7 @@ if(!isset($_SESSION['usuario'])){
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="fecha">Fecha:</label>
-									<input type="text" name="fecha" id="fecha" class="form-control">
+									<input type="text" name="fecha" id="fecha" class="form-control" placeholder="dd/mm/yyyy">
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -164,7 +174,7 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-5">
-								<button class="btn btn-info" id="actualizar">Actualizar Datos
+								<button type="button" actualizar" class="btn btn-info" id="actualizar">Actualizar Datos
 									<span class="glyphicon glyphicon-refresh"></span>
 								</button>
 							</div>
@@ -180,7 +190,7 @@ if(!isset($_SESSION['usuario'])){
 	<script src="js/dataTables.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/tablas.js"></script>
-	<script type="text/javascript" src="js/actualizar_datos.js"></script>
+	<script type="text/javascript" src="js/actualizar_orden.js"></script>
 </body>
 </html>
 
