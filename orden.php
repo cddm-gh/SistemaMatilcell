@@ -125,13 +125,16 @@ if(!isset($_SESSION['usuario'])){
 							<input type="number" class="form-control" name="total" id="total" placeholder="Cantidad a pagar" required="true"
 								min="200" step="50">
 						</div>
+						<label>Abono:</label><br>
 						<div class="form-group">
 							<input type="number" class="form-control" name="abono" id="abono" placeholder="Cantidad abonada"
 								min="0">
 						</div>
+						<label>Restante:</label><br>
 						<div class="form-group">
 							<input type="text" class="form-control" name="resta" id="resta" placeholder="Cantidad restante" readonly>
 						</div>
+						<label>Modo de pago:</label><br>
 						<div class="form-group">
 							<select name="pagos" class="form-control" id="pagos">
 								<option value="nada" selected="true" disabled="true">-- Tipos de pago</option>
