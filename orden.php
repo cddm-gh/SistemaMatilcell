@@ -16,8 +16,8 @@ if(!isset($_SESSION['usuario'])){
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Creación de Ordenes</title>
-	<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
@@ -123,7 +123,7 @@ if(!isset($_SESSION['usuario'])){
 						<label>Total:</label><br>
 						<div class="form-group">
 							<input type="number" class="form-control" name="total" id="total" placeholder="Cantidad a pagar" required="true"
-								min="200" step="50">
+								min="0">
 						</div>
 						<label>Abono:</label><br>
 						<div class="form-group">

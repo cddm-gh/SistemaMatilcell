@@ -24,7 +24,8 @@ if(!isset($_SESSION['usuario'])){
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Consulta de Ordenes</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">-->
+	<link rel="stylesheet" href="css/dataTables.min.css">
 	<link rel="stylesheet" href="css/estilos.css">
 
 </head>
