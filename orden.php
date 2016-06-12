@@ -28,6 +28,11 @@ if(!isset($_SESSION['usuario'])){
 				
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<a href="contenido.php"><h3> <- Volver al INICIO</h3></a>
+			</div>
+		</div>
 		<div class="row">			
 
 				<form action="validar_orden.php" method="POST" name="orden">

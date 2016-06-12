@@ -34,13 +34,13 @@ if(!isset($_SESSION['usuario'])){
 		<div class="contenido">
 			<div class="col-md-4">
 				<ul class="nav nav-pills nav-stacked text-center">
-					<li role="presentation" class="list-group-item list-group-item-info"><a href="orden.php" target="blank">CREAR ORDEN
+					<li role="presentation" class="list-group-item list-group-item-info"><a href="orden.php">CREAR ORDEN
 						<span class="glyphicon glyphicon-file"></span></a></li>
-					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_ordenes.php" target="_blank">CONSULTAR ORDENES
+					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_ordenes.php">CONSULTAR ORDENES
 						<span class="glyphicon glyphicon-search"></span></a></li>
-					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_clientes.php" target="_blank">CONSULTAR CLIENTES
+					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_clientes.php">CONSULTAR CLIENTES
 						<span class="glyphicon glyphicon-search"></span></a></li>
-					<li role="presentation" class="list-group-item list-group-item-warning"><a href="administracion.php" target="_blank">AREA ADMINISTRATIVA DEL SISTEMA
+					<li role="presentation" class="list-group-item list-group-item-warning"><a href="administracion.php">AREA ADMINISTRATIVA DEL SISTEMA
 						<span class="glyphicon glyphicon-cog"></span></a></li>
 				</ul>
 			</div>

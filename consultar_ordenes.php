@@ -33,6 +33,11 @@ if(!isset($_SESSION['usuario'])){
 	<div class="container-fluid">
 		<br>
 			<div class="row">
+				<div class="col-md-12">
+					<a href="contenido.php"><h3> <- Volver al INICIO</h3></a>
+				</div>
+			</div>
+			<div class="row">
 				<table class="table table-bordered table-condensed" id="tabla_ordenes" onclick="clickEnTabla('tabla_ordenes');">
 					<thead>
 						<tr class="info">

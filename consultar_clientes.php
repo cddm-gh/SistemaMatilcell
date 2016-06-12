@@ -26,6 +26,11 @@ if(!isset($_SESSION['usuario'])){
 	
 	<div class="container">
 		<br>
+		<div class="row">
+			<div class="col-md-12">
+				<a href="contenido.php"><h3> <- Volver al INICIO</h3></a>
+			</div>
+		</div>
 		<table class="table table-bordered display" id="tabla_clientes" onclick="clickEnTabla('tabla_clientes');">
 			<thead>
 				<tr class="success">

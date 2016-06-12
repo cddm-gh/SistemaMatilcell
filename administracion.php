@@ -100,6 +100,7 @@ if(isset($_POST['guardartec'])){
 			?>
         </div>
         <hr>
+        
         <div class="row">
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" role="form">
                 <div class="col-md-4">
