@@ -31,24 +31,26 @@ if(!isset($_SESSION['usuario'])){
 				<a href="contenido.php"><h3> <- Volver al INICIO</h3></a>
 			</div>
 		</div>
-		<table class="table table-bordered display" id="tabla_clientes" onclick="clickEnTabla('tabla_clientes');">
-			<thead>
-				<tr class="success">
-					<th>Cédula</th>
-					<th>Nombre</th>
-					<th>Teléfono</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php while($row = $statement->fetch()):; ?>
-				<tr>
-					<td><?php echo $row[0]; ?></td>
-					<td><?php echo $row[1]; ?></td>
-					<td><?php echo $row[2]; ?></td>	
-				</tr>
-				<?php endwhile; ?>
-			</tbody>
-		</table>
+		<div class="table-responsive">
+			<table class="table table-bordered display" id="tabla_clientes" onclick="clickEnTabla('tabla_clientes');">
+				<thead>
+					<tr class="success">
+						<th>Cédula</th>
+						<th>Nombre</th>
+						<th>Teléfono</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php while($row = $statement->fetch()):; ?>
+					<tr>
+						<td><?php echo $row[0]; ?></td>
+						<td><?php echo $row[1]; ?></td>
+						<td><?php echo $row[2]; ?></td>	
+					</tr>
+					<?php endwhile; ?>
+				</tbody>
+			</table>
+		</div>
 		<div class="row">
 			<div class="col-md-12">
 				<form action="" method="POST" id="orden">

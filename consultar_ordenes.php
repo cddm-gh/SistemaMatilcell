@@ -38,6 +38,7 @@ if(!isset($_SESSION['usuario'])){
 				</div>
 			</div>
 			<div class="row">
+				<div class="table-responsive">
 				<table class="table table-bordered table-condensed" id="tabla_ordenes" onclick="clickEnTabla('tabla_ordenes');">
 					<thead>
 						<tr class="info">
@@ -78,6 +79,7 @@ if(!isset($_SESSION['usuario'])){
 						<?php endwhile; ?>
 					</tbody>
 				</table>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
