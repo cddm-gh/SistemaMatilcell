@@ -145,26 +145,61 @@ if(isset($_POST['guardartec'])){
                     </div>
                 </div>
             </form>
-            
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-                <div class="col-md-4">
-                    <div class="form-group has-feedback">
-                        <label for="nombretec">Nombre del Técnico</label>
-                        <input type="text" class="form-control" name="nombretec" id="nombretec" maxlength="30" required="true">
-                        <i class="glyphicon glyphicon-font form-control-feedback"></i>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <select name="cargostecnicos" class="form-control" id="cargostecnicos">
-							<option value="nada" selected="true" disabled="true">-- Cargo del Técnico</option>
-							<option value="tecrep">Técnico de Reparación</option>
-							<option value="tecsoft">Técnico de Software</option>
-						</select>
-                    </div>
-                    <button type="submit" id="guardar" name="guardartec" class="btn btn-primary">Guardar Técnico
-                        <span class="glyphicon glyphicon-save"></span>
-                    </button>
-                </div>
-            </form>
+            <div class="col-md-4">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                    
+                        <div class="form-group has-feedback">
+                            <label for="nombretec">Nombre del Técnico</label>
+                            <input type="text" class="form-control" name="nombretec" id="nombretec" maxlength="30" required="true">
+                            <i class="glyphicon glyphicon-font form-control-feedback"></i>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <select name="cargostecnicos" class="form-control" id="cargostecnicos">
+                                <option value="nada" selected="true" disabled="true">-- Cargo del Técnico</option>
+                                <option value="tecrep">Técnico de Reparación</option>
+                                <option value="tecsoft">Técnico de Software</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="guardar" name="guardartec" class="btn btn-primary">Guardar Técnico
+                            <span class="glyphicon glyphicon-save"></span>
+                        </button>
+                    
+                </form>
+                
+                <label for="nomtec">Seleccione el Técnico que desea elimiar</label>
+                <select name="nomtec" id="nomtec" class="form-control">
+                    <option value="nada" selected="true" disabled="true">-- Técnicos</option>
+					<?php
+                        require_once dirname(__FILE__).'/db/connect.php';
+	                    $statement = $conexion->prepare('SELECT * FROM tecnicos');
+	                    $statement->execute();
+                        
+                        while($row = $statement->fetch()){
+							echo "<option value='".$row['id_tec']."'>" . $row['nombre'] . "</option>";
+						}
+                    ?>
+				</select><br>
+                <button type="button" id="elimar_tecnico" class="btn btn-danger" onclick="eliminarTecnico()">Eliminar Técnico
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button> 
+                <label for="nomemp">Seleccione el Empleado que desea elimiar</label>
+                <select name="nomemp" id="nomemp" class="form-control">
+                    <option value="nada" selected="true" disabled="true">-- Empleados</option>
+					<?php
+                        require_once dirname(__FILE__).'/db/connect.php';
+	                    $statement = $conexion->prepare('SELECT * FROM empleados');
+	                    $statement->execute();
+                        
+                        while($row = $statement->fetch()){
+							echo "<option value='".$row['id_emp']."'>" . $row['nombre'] . "</option>";
+						}
+                    ?>
+				</select><br>
+                <button type="button" id="elimar_empleado" class="btn btn-danger" onclick="eliminarEmpleado()">Eliminar Empleado
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+
+            </div>
         </div>
         <hr>
         
@@ -175,6 +210,6 @@ if(isset($_POST['guardartec'])){
     <!--Plugin para enmascarar los inputs-->
 	<script src="js/jquery.maskedinput.js"></script>
     <script src="js/global.js"></script>
-    
+    <script src="js/eliminar_et.js"></script>
 </body>
 </html>
