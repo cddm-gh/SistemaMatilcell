@@ -42,6 +42,8 @@ if(!isset($_SESSION['usuario'])){
 						<span class="glyphicon glyphicon-search"></span></a></li>
 					<li role="presentation" class="list-group-item list-group-item-warning"><a href="administracion.php">AREA ADMINISTRATIVA DEL SISTEMA
 						<span class="glyphicon glyphicon-cog"></span></a></li>
+					<li role="presentation" class="list-group-item list-group-item-warning"><a href="reportes.php">AREA DE REPORTES
+						<span class="glyphicon glyphicon-cog"></span></a></li>
 				</ul>
 			</div>
 		</div>

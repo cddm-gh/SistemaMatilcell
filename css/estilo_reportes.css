@@ -1,0 +1,12 @@
+table{
+    text-align: center;
+}
+table .primera_fila{
+    background-color: lightblue;
+}
+table, th, td {
+   border: 1px solid lightgray;
+}
+.titulo_reporte{
+    text-align: center;
+}
