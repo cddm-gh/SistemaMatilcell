@@ -6,7 +6,7 @@ if(!isset($_SESSION['usuario'])){
 }else{
 	$usuario = $_SESSION['usuario'];
 	require_once dirname(__FILE__).'/db/connect.php';
-	$statement = $conexion->prepare("SELECT nombre FROM empleados WHERE usuario = :usuario");
+	$statement = $conexion->prepare("SELECT nombre,privilegios FROM empleados WHERE usuario = :usuario");
 	$statement->execute(array(
 		':usuario' => $usuario
 	));
@@ -29,6 +29,7 @@ if(!isset($_SESSION['usuario'])){
 	<div class="contenedor">
 		<h1 class="titulo">Panel de control del sistema</h1>
 		<h2>Bienvenido <- <?php echo $nombre['nombre']; ?> -> </h2>
+		<h3>Privilegios <- <?php echo $nombre['privilegios']; ?> -></h3>
 		<a href="cerrar.php"><span class="label label-danger">Cerrar Sesión <span class="glyphicon glyphicon-off"></span></span></a>
 		<hr>
 		<div class="contenido">
@@ -40,8 +41,12 @@ if(!isset($_SESSION['usuario'])){
 						<span class="glyphicon glyphicon-search"></span></a></li>
 					<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_clientes.php">CONSULTAR CLIENTES
 						<span class="glyphicon glyphicon-search"></span></a></li>
-					<li role="presentation" class="list-group-item list-group-item-warning"><a href="administracion.php">AREA ADMINISTRATIVA DEL SISTEMA
-						<span class="glyphicon glyphicon-cog"></span></a></li>
+					<?php
+						if($nombre['privilegios'] == 1){
+							echo '<li role="presentation" class="list-group-item list-group-item-warning"><a href="administracion.php">AREA ADMINISTRATIVA DEL SISTEMA
+								<span class="glyphicon glyphicon-cog"></span></a></li>';
+						}
+					?>
 					<li role="presentation" class="list-group-item list-group-item-warning"><a href="reportes.php">AREA DE REPORTES
 						<span class="glyphicon glyphicon-cog"></span></a></li>
 				</ul>
