@@ -14,7 +14,7 @@ if(!isset($_SESSION['usuario'])){
     $falla = trim($_POST['falla']);
     $observacion = trim($_POST['observacion']);
     $status = $_POST['estado'];
-    $fecha = trim($_POST['fecha']);
+    $fecha = date("Y-m-d",strtotime($_POST['fecha']));
     $total = $_POST['total'];
     $abono = $_POST['abono'];
     

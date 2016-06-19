@@ -158,7 +158,7 @@ if(!isset($_SESSION['usuario'])){
 									<label for="fecha" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
 
 									</label>
-									<input id="fecha" name="fecha" type="text" class="form-control" readonly/>
+									<input id="fecha" name="fecha" type="text" class="form-control" value="<?php echo date('Y-m-d'); ?>" required="true"/>
 								</div>
 							</div>
 						</div>

@@ -4,9 +4,9 @@ use Dompdf\Dompdf;
 if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
 }else{
-    //if(isset($_POST['generar'])){
-        $fecha1 = $_POST['fecha_inicial'];
-        $fecha2 = $_POST['fecha_final'];
+    if(isset($_POST['generar'])){
+        $fecha1 = date("Y-m-d",strtotime($_POST['fecha_inicial']));
+        $fecha2 = date("Y-m-d",strtotime($_POST['fecha_final']));
             require dirname(__FILE__).'/db/connect.php';
             require_once dirname(__FILE__).'/dompdf/autoload.inc.php';
 
@@ -15,9 +15,14 @@ if(!isset($_SESSION['usuario'])){
                 SELECT COUNT(*),t.nombre FROM reparaciones r 
                 INNER JOIN ordenes o ON r.n_orden = o.numero
                 INNER JOIN tecnicos t ON o.id_tec = t.id_tec 
-                WHERE r.status LIKE "Reparado%" GROUP BY o.id_tec'
+                WHERE r.status LIKE "Reparado%" AND r.fecha BETWEEN :fecha1 AND :fecha2 GROUP BY o.id_tec'
             );
-            $statement->execute();
+            $statement->execute(
+                array(
+                    ':fecha1' => $fecha1,
+                    ':fecha2' => $fecha2
+                )
+            );
 
             $codigoHTML = '
             <html>
@@ -53,7 +58,7 @@ if(!isset($_SESSION['usuario'])){
         $dompdf->render();
         $dompdf->stream("Reparaciones_Tecnicos",array('Attachment'=>0));
 
-    //}
+    }
 }
 
 
@@ -73,11 +78,11 @@ if(!isset($_SESSION['usuario'])){
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="form-group">
                 <label for="fecha_inicial">Fecha Inicial: </label>
-                <input type="date" class="form-control" name="fecha_inicial">
+                <input type="date" class="form-control" name="fecha_inicial" value="<?php echo date('Y-m-d'); ?>">
             </div>
             <div class="form-group">
                 <label for="fecha_final">Fecha Final: </label>
-                <input type="date" class="form-control" name="fecha_final">
+                <input type="date" class="form-control" name="fecha_final" value="<?php echo date('Y-m-d'); ?>">
             </div>
 
             <input type="submit" name="generar" value="Generar Reporte">

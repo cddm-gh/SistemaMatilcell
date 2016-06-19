@@ -21,7 +21,7 @@ if(isset($_POST['crear'])){
 	$falla = strtoupper(trim($_POST['falla']));
 	$observacion = strtoupper(trim($_POST['observacion']));
 	$status = trim($_POST['status']);
-	$fecha = trim($_POST['fecha']);
+	$fecha = date("Y-m-d",strtotime($_POST['fecha']));
 	$costo = trim($_POST['total']);
 	$abono = trim($_POST['abono']);
 	$resta = trim($_POST['resta']);
@@ -117,7 +117,7 @@ if(isset($_POST['crear'])){
 	<script>
 	window.setTimeout(function() {
 		window.location = 'orden.php';
-	}, 2000);
+	}, 1000);
 	</script>
 </body>
 </html>

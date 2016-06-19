@@ -157,7 +157,7 @@ if(!isset($_SESSION['usuario'])){
 							<div class="col-md-3">
 								<div class="form-group">
 									<label for="fecha">Fecha:</label>
-									<input type="text" name="fecha" id="fecha" class="form-control" placeholder="dd/mm/yyyy">
+									<input type="text" name="fecha" id="fecha" class="form-control" placeholder="yyyy-mm-dd">
 								</div>
 							</div>
 							<div class="col-md-3">
@@ -181,7 +181,7 @@ if(!isset($_SESSION['usuario'])){
 						</div>
 						<div class="row">
 							<div class="col-md-6 col-md-offset-5">
-								<button type="button" actualizar" class="btn btn-info" id="actualizar">Actualizar Datos
+								<button type="button" name="actualizar" class="btn btn-info" id="actualizar">Actualizar Datos
 									<span class="glyphicon glyphicon-refresh"></span>
 								</button>
 							</div>
