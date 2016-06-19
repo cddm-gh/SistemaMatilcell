@@ -10,3 +10,6 @@ table, th, td {
 .titulo_reporte{
     text-align: center;
 }
+.etiqueta{
+    font-weight: bold;
+}

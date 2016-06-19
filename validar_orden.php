@@ -1,6 +1,7 @@
 <?php 
 
 session_start();
+use Dompdf\Dompdf;
 
 if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
@@ -94,6 +95,43 @@ if(isset($_POST['crear'])){
 				':fecha' => $fecha
 			));
 			
+			//Crear el reporte de la orden para entregar al cliente
+			require_once dirname(__FILE__).'/dompdf/autoload.inc.php';
+			$codigoHTML = '
+			<html>
+            <head>
+                <meta charset="UTF-8">
+                <link rel="stylesheet" href="css/estilo_reportes.css">
+            </head>
+            <body>
+                <label class="etiqueta">Fecha: </label>'.$fecha.'<br>
+				<label class="etiqueta">Orden# </label>'.$ultima_orden.'<br>
+				<h3>Datos del Cliente.</h3>
+				<label class="etiqueta">Nombre: </label>'.$nombre.'<br>
+				<label class="etiqueta">Cedula: </label>'.$cedula.'<br>
+				<label class="etiqueta">Telefono: </label>'.$telefono.'<br>
+				<h3>Datos del Equipo.</h3>
+				<label class="etiqueta">Serial: </label>'.$serial.'<br>
+				<label class="etiqueta">Marca: </label>'.$marca.'<br>
+				<label class="etiqueta">Modelo: </label>'.$modelo.'<br>
+				<label class="etiqueta">Memoria: </label>'.$memoria.'<br>
+				<label class="etiqueta">CHIP: </label>'.$chip.'<br>
+				<label class="etiqueta">Tapa: </label>'.$tapa.'<br>
+				<h3>Otros Datos.</h3>
+				<label class="etiqueta">Tecnico: </label>'.$id_tec.'<br>
+				<label class="etiqueta">Falla: </label>'.$falla.'<br>
+				<label class="etiqueta">Observacion: </label>'.$observacion.'<br>
+				<label class="etiqueta">Total: </label>'.$costo.'<br>
+				<label class="etiqueta">Abono: </label>'.$abono.'<br>
+				<label class="etiqueta">Resta: </label>'.$resta.'<br>';
+
+			$codigoHTML .= '</body></html>';
+			$codigoHTML = utf8_encode($codigoHTML);
+        	$dompdf = new Dompdf();
+        	$dompdf->loadHtml($codigoHTML);
+        	ini_set("memory_limit","128M");
+        	$dompdf->render();
+        	$dompdf->stream("Reparaciones_Tecnicos",array('Attachment'=>0));
 
 		}catch(PDOException $e){
 			echo "<h2> No se pudo crear la orden " . $e->getMessage() . "</h2>";
