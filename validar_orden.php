@@ -81,7 +81,7 @@ if(isset($_POST['crear'])){
 			$statement->execute(array(
 				':cedula' => $cedula,
 				':serial_eq' => $serial,
-				':id_car' => $id_caracteristicas, //regresa el ID de las ultimas caracteristicas agregadas
+				':id_car' => $id_caracteristicas, //regresa el ID de las ultimas caracteristicas agregadass
 				':id_tec' => $id_tec,
 				':id_pago' => $id_pago,
 				':fecha' => $fecha
@@ -98,35 +98,110 @@ if(isset($_POST['crear'])){
 			//Crear el reporte de la orden para entregar al cliente
 			require_once dirname(__FILE__).'/dompdf/autoload.inc.php';
 			$codigoHTML = '
-			<html>
-            <head>
-                <meta charset="UTF-8">
-                <link rel="stylesheet" href="css/estilo_reportes.css">
-            </head>
-            <body>
-                <label class="etiqueta">Fecha: </label>'.$fecha.'<br>
-				<label class="etiqueta">Orden# </label>'.$ultima_orden.'<br>
-				<h3>Datos del Cliente.</h3>
-				<label class="etiqueta">Nombre: </label>'.$nombre.'<br>
-				<label class="etiqueta">Cedula: </label>'.$cedula.'<br>
-				<label class="etiqueta">Telefono: </label>'.$telefono.'<br>
-				<h3>Datos del Equipo.</h3>
-				<label class="etiqueta">Serial: </label>'.$serial.'<br>
-				<label class="etiqueta">Marca: </label>'.$marca.'<br>
-				<label class="etiqueta">Modelo: </label>'.$modelo.'<br>
-				<label class="etiqueta">Memoria: </label>'.$memoria.'<br>
-				<label class="etiqueta">CHIP: </label>'.$chip.'<br>
-				<label class="etiqueta">Tapa: </label>'.$tapa.'<br>
-				<h3>Otros Datos.</h3>
-				<label class="etiqueta">Tecnico: </label>'.$id_tec.'<br>
-				<label class="etiqueta">Falla: </label>'.$falla.'<br>
-				<label class="etiqueta">Observacion: </label>'.$observacion.'<br>
-				<label class="etiqueta">Total: </label>'.$costo.'<br>
-				<label class="etiqueta">Abono: </label>'.$abono.'<br>
-				<label class="etiqueta">Resta: </label>'.$resta.'<br>';
-
-			$codigoHTML .= '</body></html>';
-			$codigoHTML = utf8_encode($codigoHTML);
+				<html>
+					<head>
+						<meta charset="UTF-8">
+						<link rel="stylesheet" href="css/estilo_reportes.css">
+					</head>
+					<body>
+						<table>
+							<tr>
+								<th class="etiqueta">Fecha:</th>
+								<th class="etiqueta">'.$fecha.'</th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th class="etiqueta">Orden#</th>
+								<th></th>
+								<th class="etiqueta">'.$ultima_orden.'</th>
+							</tr>
+							<tr>
+								<td class="etiqueta">Datos del Cliente</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="etiqueta">Datos del Equipo</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="etiqueta">Cédula:</td>
+								<td>'.$cedula.'</td>
+								<td class="etiqueta"></td>
+								<td class="etiqueta">Serial:</td>
+								<td>'.$serial.'</td>
+								<td></td>
+								<td class="etiqueta">Memoria:</td>
+								<td>'.$memoria.'</td>
+							</tr>
+							<tr>
+								<td class="etiqueta">Nombre:</td>
+								<td>'.$nombre.'</td>
+								<td></td>
+								<td class="etiqueta">Marca:</td>
+								<td>'.$marca.'</td>
+								<td></td>
+								<td class="etiqueta">CHIP:</td>
+								<td>'.$chip.'</td>
+							</tr>
+							<tr>
+								<td class="etiqueta">Teléfono:</td>
+								<td>'.$telefono.'</td>
+								<td></td>
+								<td class="etiqueta">Modelo:</td>
+								<td>'.$modelo.'</td>
+								<td></td>
+								<td class="etiqueta">Tapa:</td>
+								<td>'.$tapa.'</td>
+							</tr>
+							<tr>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td class="etiqueta">Técnico:</td>
+								<td>'.$id_tec.'</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="etiqueta">Total:</td>
+								<td>'.$costo.'</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="etiqueta">Falla:</td>
+								<td>'.$falla.'</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="etiqueta">Abono:</td>
+								<td>'.$abono.'</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="etiqueta">Observación:</td>
+								<td>'.$observacion.'</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td class="etiqueta">Resta:</td>
+								<td>'.$resta.'</td>
+								<td></td>
+							</tr>
+							<hr>
+						</table>
+					</body>
+				</html>
+			';
+			
+			$codigoHTML = utf8_decode(utf8_encode($codigoHTML));
         	$dompdf = new Dompdf();
         	$dompdf->loadHtml($codigoHTML);
         	ini_set("memory_limit","128M");
