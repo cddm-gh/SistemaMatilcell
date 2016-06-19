@@ -23,8 +23,15 @@ input{
 	background-color: #FFFFA2;
 	font-weight: bold; 
 }
-/*
-.form-group.has-feedback { position: relative;}
-.form-group.has-feedback .glyphicon { position: absolute; top: 10px; right : 10px;}
-.form-group.has-feedback input { padding-left: 30px; }*/
-
+.navbar-brand {
+  padding: 0px; /* firefox bug fix */
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 5px; /* firefox bug fix */
+  margin-left: 25px;
+  width: auto;
+}
+.jumbotron{
+	background-color: white;
+}

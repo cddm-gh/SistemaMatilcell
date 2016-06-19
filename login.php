@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 </head>
 <body>
 	
-	<div class="container-fluid">
+	<div class="container">
 		<br>
 		<header id="cabecera">
 			<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -58,8 +58,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="#" class="navbar-brand">
-							Mundo Matilcell
+						<a href="#" class="navbar-brand" title="Mundo Matilcell">
+							<img style="max-width:200px; max-height: 200px;" src="imgs/logomm.png" class="img-responsive">
 						</a>
 					</div>
 
@@ -89,20 +89,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			</nav>
 		</header>
 
-		<section>
-			<?php
-				if( $errores !== ""){
-					echo '<div class="alert alert-danger">'; 
-					echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
-					echo " " . $errores; 
-					echo '</div>';
-				}
-			?>
-			<!--<p>
-				NeogioPruebaLorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias obcaecati vel porro, reprehenderit doloremque laudantium esse eligendi quod aliquid consequatur, officiis velit! Nam reiciendis nostrum dolor distinctio consequatur veritatis, sequi optio atque ratione minima incidunt ad beatae veniam fugit, pariatur consequuntur illum dignissimos natus explicabo alias. Dolores minima ullam, quas magni, vitae inventore voluptatem officiis dicta est omnis quibusdam, facilis rem illo voluptatum sapiente. Possimus, deserunt ex eos explicabo, error nemo doloremque delectus laboriosam, aliquam, eum numquam quam porro praesentium corrupti a! Voluptates ab sapiente incidunt, harum illum dolorem, culpa hic, illo similique iste molestias aut temporibus. Facere beatae iusto praesentium id eveniet unde dolorum, voluptatum iure. Molestiae rerum reprehenderit odio fugiat nihil quae ea autem, expedita facilis a doloribus cupiditate aspernatur amet facere, sit, ipsa nemo praesentium. Esse laboriosam error ex tenetur consequatur saepe corporis minima repudiandae velit cupiditate corrupti, tempora est modi, atque nihil nostrum architecto amet similique aut quam, facere nulla a numquam culpa. Nihil doloribus molestiae ullam molestias commodi modi consequatur, eum est et porro eligendi possimus earum repellendus asperiores amet similique facere. Assumenda unde laboriosam officia, voluptas maiores, nemo obcaecati ipsum asperiores quasi quos dolore minima veritatis, perferendis. Totam optio nulla soluta perferendis nisi qui.
-			</p>-->
-			<img src="imgs/logo.png" class="img-responsive img-rounded" alt="Logo Matilcell">
-		</section>
+		<?php
+			if( $errores !== ""){
+				echo '<div class="alert alert-danger">'; 
+				echo '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
+				echo " " . $errores; 
+				echo '</div>';
+			}
+		?>
+		<div class="jumbotron">
+			<img src="imgs/logomm.png" class="img img-responsive" alt="Logo Mundo Matilcell">
+		</div>
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>

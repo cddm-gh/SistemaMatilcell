@@ -51,19 +51,3 @@ if(!isset($_SESSION['usuario'])){
 
 
 ?>
-<!--<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Actualizar datos de Orden</title>
-</head>
-<body>
-	
-	<p><h1>Orden actualizada con éxito!</h1></p>
-	<script>
-        window.setTimeout(function() {
-            window.location = 'consultar_ordenes.php';
-        }, 1000);
-	</script>
-</body>
-</html>-->
