@@ -11,7 +11,7 @@ if(!isset($_SESSION['usuario'])){
 		INNER JOIN caracteristicas c ON o.id_caract = c.id_caract
 		INNER JOIN tecnicos t ON o.id_tec = t.id_tec 
 		INNER JOIN pagos p ON o.id_pago = p.id_pago 
-		INNER JOIN reparaciones r ON o.numero = r.n_orden'
+		INNER JOIN reparaciones r ON o.numero = r.n_orden ORDER BY o.numero DESC'
 	);
 	$statement->execute();
 }

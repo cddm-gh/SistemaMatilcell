@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	//Tabla Ordenes
 	$('#tabla_ordenes').dataTable({
+        "order": [],
 		"language": {
             "lengthMenu": "Mostrar _MENU_ registros por pagina",
             "zeroRecords": "Nada encontrado - sorry",
