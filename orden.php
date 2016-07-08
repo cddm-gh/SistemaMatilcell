@@ -47,7 +47,7 @@ if(!isset($_SESSION['usuario'])){
 
 						<div class="form-group has-feedback">
 							<label for="nombre">Nombre:</label>
-							<input type="text" class="form-control textoMayuscula" id="nombre" name="nombre" placeholder="Nombre del cliente"
+							<input type="text" class="form-control textoMayuscula" id="nombre" name="nombre" placeholder="Nombre Apellido del Cliente"
 								required="true" maxlength="30">
 							<i class="glyphicon glyphicon-font form-control-feedback"></i>
 						</div>
@@ -104,7 +104,7 @@ if(!isset($_SESSION['usuario'])){
 					<div class="col-md-3">
 						<div class="form-group">
 						<label>Falla(s)</label><br>
-						<textarea name="falla" class="form-control textoMayuscula" id="falla" name="falla" rows="5" cols="25" required wrap="soft" maxlength="50"
+						<textarea name="falla" class="form-control textoMayuscula" id="falla" name="falla" rows="5" cols="25" required="true" wrap="soft" maxlength="50"
 							maxlength="50"></textarea>
 						<br>
                         <label for="tecnicos">Reparar Con:</label>

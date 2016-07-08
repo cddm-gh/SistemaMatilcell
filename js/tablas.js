@@ -18,7 +18,7 @@ $(document).ready(function(){
             }
         },
         "autoWidth": true,
-        "iDisplayLength": 25
+        "iDisplayLength": 10
 	});
 	//Tabla Clientes
 	$('#tabla_clientes').dataTable({

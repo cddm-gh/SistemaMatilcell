@@ -29,7 +29,7 @@ if(!isset($_SESSION['usuario'])){
 	<div class="contenedor">
 		<h1 class="titulo">Panel de control del sistema</h1>
 		<h2>Bienvenido <- <?php echo $nombre['nombre']; ?> -> </h2>
-		<h3>Privilegios <- <?php echo $nombre['privilegios']; ?> -></h3>
+		<!--<h3>Privilegios <- <?php //echo $nombre['privilegios']; ?> -></h3>-->
 		<a href="cerrar.php"><span class="label label-danger">Cerrar Sesión <span class="glyphicon glyphicon-off"></span></span></a>
 		<hr>
 		<div class="contenido">

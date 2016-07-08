@@ -29,6 +29,8 @@ if(isset($_POST['crear'])){
 	$tipo_pago = $_POST['pagos'];
 	$cliente_enc = $_POST['cliente_enc'];
 	$equipo_enc = $_POST['equipo_enc'];
+
+
 	//Validar que las variables no esten vacias
 	if(empty($cedula) or empty($nombre) or empty($telefono) or empty($serial) or empty($marca) or empty($modelo)
 		or empty($falla) or empty($memoria) or empty($tapa) or empty($chip) or empty($costo)){
