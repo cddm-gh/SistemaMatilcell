@@ -97,9 +97,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				echo '</div>';
 			}
 		?>
-		<div class="jumbotron">
-			<img src="imgs/logomm.png" class="img img-responsive" alt="Logo Mundo Matilcell">
-		</div>
+		
 	</div>
 
 	<script src="js/jquery-1.12.2.min.js"></script>
