@@ -34,9 +34,33 @@ if(!isset($_SESSION['usuario'])){
 		<br>
 			<div class="row">
 				<div class="col-md-12">
-					<a href="contenido.php"><h3> <- Volver al INICIO</h3></a>
+					<nav class="navbar navbar-inverse navbar-fixed-top">
+						<div class="container-fluid">
+							<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="contenido.php"></a>
+							</div>
+							<div class="collapse navbar-collapse" id="myNavbar">
+							<ul class="nav navbar-nav">
+								<li><a href="contenido.php">Inicio</a></li>
+								<li><a href="orden.php">Crear Orden</a></li>
+								<li class="active"><a href="consultar_ordenes.php">Ver Ordenes</a></li>
+								<li><a href="consultar_clientes.php">Ver Clientes</a></li>
+								<li><a href="reportes.php">Reportes</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="cerrar.php"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión</a></li>
+							</ul>
+							</div>
+						</div>
+					</nav>
 				</div>
 			</div>
+			<br>
 			<div class="row">
 				<div class="table-responsive">
 				<table class="table table-bordered table-condensed" id="tabla_ordenes" onclick="clickEnTabla('tabla_ordenes');">
