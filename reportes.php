@@ -44,8 +44,6 @@ if(!isset($_SESSION['usuario'])){
 			<ul class="nav nav-pills nav-stacked text-center">
 				<li role="presentation" class="list-group-item list-group-item-info"><a href="reporte_tecnicos.php">TÉCNICO CON MÁS REPARACIONES
 					<span class="glyphicon glyphicon-file"></span></a></li>
-				<li role="presentation" class="list-group-item list-group-item-success"><a href="consultar_ordenes.php">MEJOR CLIENTE
-					<span class="glyphicon glyphicon-search"></span></a></li>
 			</ul>
 		</div>
 	</div>	

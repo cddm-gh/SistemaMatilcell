@@ -14,6 +14,7 @@ if(isset($_POST['guardar'])){
     $usuario = filter_var($_POST['usuario'], FILTER_SANITIZE_STRING);
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
+    $privilegios = $_POST['privilegios'];
     
     if($password1 !== $password2)
         $errores .= "Las contraseñas no coinciden!";
@@ -23,12 +24,13 @@ if(isset($_POST['guardar'])){
         
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try{
-            $statement = $conexion->prepare("INSERT INTO empleados VALUES (0,:nombre,:usuario,:password,:cargo)");
+            $statement = $conexion->prepare("INSERT INTO empleados VALUES (0,:nombre,:usuario,:password,:cargo,:priv)");
             $resultado = $statement->execute(array(
                 ':nombre' => $nombre,
                 ':usuario' => $usuario,
                 ':password' => $password1,
-                ':cargo' => $rol
+                ':cargo' => $rol,
+                ':priv' => $privilegios
             ));
         
             if( $resultado )
@@ -157,6 +159,14 @@ if(isset($_POST['guardartec'])){
                         <input type="text" id="password2" name="password2" class="form-control" placeholder="Contraseña para ingresar al sistema" 
                             required="true" maxlength="25">
                         <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label for="privilegios">Seleccione los privilegios para el empleado</label>
+                        <select name="privilegios" id="privilegios" class="form-control">
+                            <option value="1">Administrador</option>
+                            <option value="2" selected="true">No Administrador</option>
+                        </select>
                     </div>
                     
                     <div class="col-md-12 col-md-offset-2">
