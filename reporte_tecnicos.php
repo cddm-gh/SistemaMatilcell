@@ -5,8 +5,11 @@ if(!isset($_SESSION['usuario'])){
 	header('Location: login.php');
 }else{
     if(isset($_POST['generar'])){
+        $hoy = date("Y-m-d");
         $fecha1 = date("Y-m-d",strtotime($_POST['fecha_inicial']));
         $fecha2 = date("Y-m-d",strtotime($_POST['fecha_final']));
+
+        if($fecha2 <= $hoy){
             require dirname(__FILE__).'/db/connect.php';
             require_once dirname(__FILE__).'/dompdf/autoload.inc.php';
 
@@ -59,13 +62,16 @@ if(!isset($_SESSION['usuario'])){
             </html>';
 
 
-        $codigoHTML = utf8_encode($codigoHTML);
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml($codigoHTML);
-        ini_set("memory_limit","128M");
-        $dompdf->render();
-        $dompdf->stream("Reparaciones_Tecnicos",array('Attachment'=>0));
+            $codigoHTML = utf8_encode($codigoHTML);
+            $dompdf = new Dompdf();
+            $dompdf->loadHtml($codigoHTML);
+            ini_set("memory_limit","128M");
+            $dompdf->render();
+            $dompdf->stream("Reparaciones_Tecnicos",array('Attachment'=>0));
 
+        }else{
+            echo "<h1><b>La fecha final no puede ser mayor a HOY </b></h1><br>";
+        }
     }
 }
 
