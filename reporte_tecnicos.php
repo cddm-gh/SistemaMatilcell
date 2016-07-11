@@ -12,10 +12,16 @@ if(!isset($_SESSION['usuario'])){
 
             
             $statement = $conexion->prepare('
-                SELECT COUNT(*),t.nombre FROM reparaciones r 
+                SELECT COUNT( * ) , t.nombre, SUM( p.total ) AS TOTAL
+                FROM reparaciones r
                 INNER JOIN ordenes o ON r.n_orden = o.numero
-                INNER JOIN tecnicos t ON o.id_tec = t.id_tec 
-                WHERE r.status LIKE "Reparado%" AND r.fecha BETWEEN :fecha1 AND :fecha2 GROUP BY o.id_tec'
+                INNER JOIN tecnicos t ON o.id_tec = t.id_tec
+                INNER JOIN pagos p ON o.numero = p.id_pago
+                WHERE r.status LIKE "Reparado%"
+                AND r.fecha
+                BETWEEN :fecha1
+                AND :fecha2
+                GROUP BY o.id_tec'
             );
             $statement->execute(
                 array(
@@ -38,11 +44,13 @@ if(!isset($_SESSION['usuario'])){
                     <tr class="primera_fila">
                         <th>Total Reparaciones</th>
                         <th>Nombre del Tecnico</th>
+                        <th>Total Producido</th>
                     </tr>';
                     while($row = $statement->fetch()){
                         $codigoHTML .= "<tr>
                                 <td>". $row[0] ."</td>
                                 <td>". $row[1] ."</td>
+                                <td>". $row[2] ."</td>
                             </tr>";   
                     }
 
