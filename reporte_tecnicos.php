@@ -101,6 +101,8 @@ if(!isset($_SESSION['usuario'])){
 
             <input type="submit" name="generar" value="Generar Reporte">
         </form>
+        <br>
+        <a href="contenido.php">Volver al inicio.</a>
     </div>
 
 
